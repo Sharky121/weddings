@@ -5,12 +5,11 @@ function ScrollIndicator() {
   return (
     <a
       href="#content"
-      className="mt-2 flex flex-shrink-0 justify-center rounded-full p-2.5 text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] transition hover:bg-white/15 hover:text-white"
+      className="absolute bottom-3 left-1/2 z-10 flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full bg-white/10 text-white/90 transition hover:bg-white/15 hover:text-white"
       aria-label="Листать вниз"
     >
       <svg
-        width="28"
-        height="28"
+        className="h-6 w-6"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -72,27 +71,32 @@ const sections = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero: первый экран, как в наших требованиях */}
+      {/* Hero: ровно по высоте экрана (минус шапка) */}
       <section
         id="hero"
-        className="relative flex h-[100dvh] h-screen flex-col items-center justify-center overflow-hidden bg-stone-900 bg-cover bg-center bg-no-repeat px-4 sm:px-6"
-        style={{ backgroundImage: "url(/welcome_bg.jpg)" }}
+        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-stone-900 bg-cover bg-no-repeat px-4 sm:px-6"
+        style={{
+          backgroundImage: "url(/welcome_bg.jpg)",
+          backgroundPosition: "center 25%",
+        }}
       >
         <div className="absolute inset-0 bg-black/30" aria-hidden />
-        <div className="relative z-10 flex max-h-[90vh] flex-col items-center justify-center gap-3 py-4 text-center text-white sm:gap-4 sm:py-6">
-          <p
-            className="text-center text-base font-semibold uppercase tracking-[0.2em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] sm:text-lg md:text-xl"
-            style={{ fontFamily: "var(--font-raleway)" }}
-          >
-            Премиальные свадьбы в сердце Мещеры
-          </p>
-          <p
-            className="max-w-lg text-center text-lg leading-snug drop-shadow-[0_2px_16px_rgba(0,0,0,0.5)] sm:text-xl md:text-2xl"
-            style={{ fontFamily: "var(--font-raleway)" }}
-          >
-            Изысканность и роскошь на лоне природы
-          </p>
-          <div className="flex flex-shrink-0 flex-wrap items-center justify-center gap-6 sm:gap-8">
+        <div className="relative z-10 flex min-h-0 flex-1 flex-col items-center justify-center gap-4 py-4 text-center text-white sm:gap-5 sm:py-6">
+          <div className="flex flex-col items-center gap-1.5 sm:gap-2">
+            <p
+              className="text-center text-xl font-semibold uppercase tracking-[0.2em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] sm:text-2xl md:text-3xl"
+              style={{ fontFamily: "var(--font-kurale)" }}
+            >
+              Премиальные свадьбы в сердце Мещеры
+            </p>
+            <p
+              className="max-w-xl text-center text-lg leading-relaxed drop-shadow-[0_2px_16px_rgba(0,0,0,0.5)] sm:text-xl md:text-2xl"
+              style={{ fontFamily: "var(--font-kurale)" }}
+            >
+              Изысканность и роскошь на лоне природы
+            </p>
+          </div>
+          <div className="mt-4 flex flex-shrink-0 flex-wrap items-center justify-center gap-6 sm:mt-6 sm:gap-8">
             <Image
               src="/top_awards_logo.svg"
               alt="100 лучших площадок"
@@ -108,11 +112,11 @@ export default function HomePage() {
               className="h-12 w-auto object-contain drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)] sm:h-14 md:h-16"
             />
           </div>
-          <ScrollIndicator />
         </div>
+        <ScrollIndicator />
       </section>
 
-      {/* Блок «Усадьба для свадьбы» — как на leodoro.ru */}
+      {/* Блок «Усадьба для свадьбы» */}
       <section
         id="content"
         className="border-t border-stone-200 bg-white py-14 sm:py-20"
