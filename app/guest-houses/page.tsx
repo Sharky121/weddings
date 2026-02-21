@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { GuestHousePhotoGrid } from "@/components/GuestHousePhotoGrid";
 
 export const metadata = {
   title: "Гостевые дома — Усадьба Ушмор",
@@ -97,7 +97,7 @@ export default function GuestHousesPage() {
       </section>
 
       {/* Общий заголовок для обеих частей */}
-      <section id="content" className="border-t border-stone-200 bg-stone-50/70 py-14 sm:py-16 lg:py-24">
+      <section id="content" className="border-t border-stone-200 bg-stone-50/80 py-14 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <p
             className="text-center text-xl text-stone-700 tracking-wide sm:text-2xl lg:text-3xl"
@@ -108,10 +108,10 @@ export default function GuestHousesPage() {
             <span className="font-semibold text-stone-900">Английская</span> и <span className="font-semibold text-stone-900">Прованс</span>.
           </p>
           <p
-            className="mt-4 text-center text-base font-normal tracking-wide text-stone-500 sm:text-lg"
-            style={{ fontFamily: "var(--font-forum)" }}
+            className="mt-4 text-center text-lg font-normal tracking-wide text-stone-600 sm:text-xl"
+            style={{ fontFamily: "var(--font-forum)", lineHeight: 1.6 }}
           >
-            Площадь дома - 400м², готов принять до 12 гостей.
+            Площадь дома — 400м², готов принять до 12 гостей.
           </p>
         </div>
       </section>
@@ -145,24 +145,10 @@ export default function GuestHousesPage() {
                 Гостевой салон с камином.
               </p>
             </div>
-            <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:col-span-8">
-              {englishStage1Images.map((src, i) => (
-                <div
-                  key={src}
-                  className={`overflow-hidden rounded-lg ${
-                    i === 0 ? "col-span-2 row-span-2 min-h-[200px] sm:min-h-[260px]" : "min-h-[120px] sm:min-h-[140px]"
-                  }`}
-                >
-                  <Image
-                    src={src}
-                    alt={`Первый этаж — фото ${i + 1}`}
-                    width={600}
-                    height={400}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+            <GuestHousePhotoGrid
+              images={englishStage1Images}
+              labels={englishStage1Images.map((_, i) => `Первый этаж — фото ${i + 1}`)}
+            />
           </div>
 
           <div className="mt-16 grid gap-8 lg:grid-cols-12 lg:gap-12 lg:items-start">
@@ -184,24 +170,10 @@ export default function GuestHousesPage() {
                 <li>Столовая и кухня — для общих трапез</li>
               </ul>
             </div>
-            <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:col-span-8">
-              {englishStage2Images.map((src, i) => (
-                <div
-                  key={src}
-                  className={`overflow-hidden rounded-lg ${
-                    i === 0 ? "col-span-2 row-span-2 min-h-[200px] sm:min-h-[260px]" : "min-h-[120px] sm:min-h-[140px]"
-                  }`}
-                >
-                  <Image
-                    src={src}
-                    alt={`Второй этаж — фото ${i + 1}`}
-                    width={600}
-                    height={400}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+            <GuestHousePhotoGrid
+              images={englishStage2Images}
+              labels={englishStage2Images.map((_, i) => `Второй этаж — фото ${i + 1}`)}
+            />
           </div>
         </div>
       </section>
@@ -231,24 +203,10 @@ export default function GuestHousesPage() {
                 <li>Гостиная и кабинет-библиотека</li>
               </ul>
             </div>
-            <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:col-span-8">
-              {provanceImages.map((src, i) => (
-                <div
-                  key={src}
-                  className={`overflow-hidden rounded-lg ${
-                    i === 0 ? "col-span-2 row-span-2 min-h-[200px] sm:min-h-[260px]" : "min-h-[120px] sm:min-h-[140px]"
-                  }`}
-                >
-                  <Image
-                    src={src}
-                    alt={`Прованс — фото ${i + 1}`}
-                    width={600}
-                    height={400}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+            <GuestHousePhotoGrid
+              images={provanceImages}
+              labels={provanceImages.map((_, i) => `Прованс — фото ${i + 1}`)}
+            />
           </div>
         </div>
       </section>

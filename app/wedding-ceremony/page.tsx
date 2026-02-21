@@ -1,20 +1,109 @@
 export const metadata = {
-  title: "Венчание — Усадьба",
-  description: "Венчание в усадьбе",
+  title: "Венчание в храме — Усадьба Ушмор",
+  description:
+    "Венчание в храме Благовещения Пресвятой Богородицы в усадьбе Ушмор.",
 };
 
 export default function WeddingCeremonyPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <h1
-        className="mb-8 text-4xl font-normal tracking-wide text-stone-800"
-        style={{ fontFamily: "var(--font-forum)" }}
+    <>
+      {/* Секция-заголовок */}
+      <section
+        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center bg-stone-900 bg-cover bg-center bg-no-repeat px-4 sm:px-6"
+        style={{ backgroundImage: "url(/wedding_bg.jpg)" }}
       >
-        Венчание
-      </h1>
-      <p className="max-w-2xl text-stone-600">
-        Контент страницы «Венчание» — здесь будет информация о венчании.
-      </p>
-    </div>
+        <div className="absolute inset-0 bg-black/40" aria-hidden />
+        <div className="relative z-10 max-w-2xl text-center">
+          <h1
+            className="mb-6 text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
+            style={{ fontFamily: "var(--font-forum)" }}
+          >
+            Венчание в храме
+          </h1>
+          <p
+            className="text-base leading-relaxed text-white/95 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-lg"
+            style={{ fontFamily: "var(--font-raleway)" }}
+          >
+            Усадьбу Ушмор венчает Храм Благовещения Пресвятой Богородицы, в котором
+            по вашему желанию можно провести таинство венчания.
+          </p>
+        </div>
+        <a
+          href="#content"
+          className="group absolute bottom-8 left-1/2 z-10 flex h-12 w-12 -translate-x-1/2 items-center justify-center overflow-visible rounded-full text-white/90 transition hover:text-white"
+          aria-label="Листать вниз"
+        >
+          <span
+            className="pointer-events-none absolute inset-0 rounded-full border-2 border-white/50"
+            aria-hidden
+            style={{
+              animation: "scroll-ripple-wave 2s ease-out infinite",
+              animationDelay: "0s",
+            }}
+          />
+          <span
+            className="pointer-events-none absolute inset-0 rounded-full border-2 border-white/50"
+            aria-hidden
+            style={{
+              animation: "scroll-ripple-wave 2s ease-out infinite",
+              animationDelay: "0.65s",
+            }}
+          />
+          <span
+            className="pointer-events-none absolute inset-0 rounded-full border-2 border-white/50"
+            aria-hidden
+            style={{
+              animation: "scroll-ripple-wave 2s ease-out infinite",
+              animationDelay: "1.3s",
+            }}
+          />
+          <span
+            className="absolute inset-0 rounded-full bg-white/10 transition-colors group-hover:bg-white/15"
+            aria-hidden
+          />
+          <svg
+            className="relative z-10 h-6 w-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M12 5v14M19 12l-7 7-7-7" />
+          </svg>
+        </a>
+      </section>
+
+      {/* Секция с видео */}
+      <section className="border-t border-stone-200 bg-stone-50 py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2
+            className="mb-8 text-center text-2xl font-normal tracking-wide text-stone-800 sm:text-3xl"
+            style={{ fontFamily: "var(--font-forum)" }}
+          >
+            Видео
+          </h2>
+          <div className="overflow-hidden rounded-xl bg-stone-900 shadow-lg">
+            <video
+              className="w-full"
+              controls
+              playsInline
+              poster="/wedding_bg.jpg"
+              preload="metadata"
+            >
+              <source src="/wedding-ceremony.mp4" type="video/mp4" />
+              Ваш браузер не поддерживает воспроизведение видео.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section id="content" className="border-t border-stone-200 bg-white py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          {/* Контент страницы — можно добавить ниже */}
+        </div>
+      </section>
+    </>
   );
 }
