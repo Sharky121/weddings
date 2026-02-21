@@ -32,3 +32,20 @@ body {
     opacity: 0;
   }
 }
+
+/* Полоса миниатюр: ограниченная область и прокрутка */
+.thumbs-slider {
+  overflow: hidden;
+  touch-action: pan-x; /* горизонтальная полоса — скролл по оси X */
+}
+.thumbs-slider.direction-vertical {
+  touch-action: pan-y; /* вертикальная полоса — скролл по оси Y */
+}
+.thumbs-slider .swiper-wrapper {
+  flex-wrap: nowrap;
+}
+/* Активная миниатюра в слайдере */
+.thumbs-slider .swiper-slide-thumb-active > div {
+  border-color: rgb(168 162 158);
+  box-shadow: 0 0 0 2px rgb(214 211 209);
+}

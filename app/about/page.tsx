@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ImageLightboxGrid } from "@/components/ImageLightbox";
 import { MapImageLightbox } from "@/components/MapImageLightbox";
+import { VideoHoverCard } from "@/components/VideoHoverCard";
 
 export const metadata = {
   title: "Об Усадьбе — Усадьба Ушмор",
@@ -92,7 +93,7 @@ export default function AboutPage() {
       </section>
 
       {/* 2. Секция с видео */}
-      <section id="content" className="bg-stone-50 py-12 sm:py-16 lg:py-20">
+      <section id="content" className="border-t border-stone-200 bg-stone-50 py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2
             className="mb-8 text-center text-2xl font-normal tracking-wide text-stone-800 sm:text-3xl"
@@ -100,18 +101,11 @@ export default function AboutPage() {
           >
             Видео
           </h2>
-          <div className="overflow-hidden rounded-xl bg-stone-900 shadow-lg">
-            <video
-              className="w-full"
-              controls
-              playsInline
-              poster="/welcome_bg.jpg"
-              preload="metadata"
-            >
-              <source src="/wedding_video.mp4" type="video/mp4" />
-              Ваш браузер не поддерживает воспроизведение видео.
-            </video>
-          </div>
+          <VideoHoverCard
+            poster="/welcome_bg.jpg"
+            videoSrc="/wedding_video.mp4"
+            title="Об усадьбе"
+          />
         </div>
       </section>
 

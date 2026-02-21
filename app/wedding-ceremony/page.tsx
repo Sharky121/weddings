@@ -1,3 +1,5 @@
+import { VideoHoverCard } from "@/components/VideoHoverCard";
+
 export const metadata = {
   title: "Венчание в храме — Усадьба Ушмор",
   description:
@@ -84,18 +86,11 @@ export default function WeddingCeremonyPage() {
           >
             Видео
           </h2>
-          <div className="overflow-hidden rounded-xl bg-stone-900 shadow-lg">
-            <video
-              className="w-full"
-              controls
-              playsInline
-              poster="/wedding_bg.jpg"
-              preload="metadata"
-            >
-              <source src="/wedding-ceremony.mp4" type="video/mp4" />
-              Ваш браузер не поддерживает воспроизведение видео.
-            </video>
-          </div>
+          <VideoHoverCard
+            poster="/wedding_bg.jpg"
+            videoSrc="/wedding-ceremony.mp4"
+            title="Венчание в храме"
+          />
         </div>
       </section>
 
