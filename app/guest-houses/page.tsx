@@ -103,15 +103,15 @@ export default function GuestHousesPage() {
             className="text-center text-xl text-stone-700 tracking-wide sm:text-2xl lg:text-3xl"
             style={{ fontFamily: "var(--font-forum)", lineHeight: 1.6 }}
           >
-            Гостевой дом{" "}
-            <span className="font-semibold tracking-tight text-stone-900">400м²</span>
-            {" "}состоит из двух изолированных частей — Английская и Прованс.
+            Гостевой дом состоит из двух изолированных частей
+            <br />
+            <span className="font-semibold text-stone-900">Английская</span> и <span className="font-semibold text-stone-900">Прованс</span>.
           </p>
           <p
-            className="mt-5 text-center text-xl tracking-wide text-stone-600 sm:text-2xl lg:text-3xl"
+            className="mt-4 text-center text-base font-normal tracking-wide text-stone-500 sm:text-lg"
             style={{ fontFamily: "var(--font-forum)" }}
           >
-            Готов принять <span className="font-semibold text-stone-800">до 12 гостей</span>.
+            Площадь дома - 400м², готов принять до 12 гостей.
           </p>
         </div>
       </section>
