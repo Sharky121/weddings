@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 function ScrollIndicator() {
   return (
@@ -74,12 +75,12 @@ export default function HomePage() {
       {/* Hero: ровно по высоте экрана (минус шапка) */}
       <section
         id="hero"
-        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-stone-900 bg-cover bg-no-repeat px-4 sm:px-6"
-        style={{
-          backgroundImage: "url(/welcome_bg.jpg)",
-          backgroundPosition: "center 25%",
-        }}
+        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-stone-900 px-4 sm:px-6"
       >
+        <ParallaxBackground
+          backgroundImage="/welcome_bg.jpg"
+          backgroundPosition="center 25%"
+        />
         <div className="absolute inset-0 bg-black/30" aria-hidden />
         <div className="relative z-10 flex min-h-0 flex-1 flex-col items-center justify-center gap-4 py-4 text-center text-white sm:gap-5 sm:py-6">
           <div className="flex flex-col items-center gap-1.5 sm:gap-2">

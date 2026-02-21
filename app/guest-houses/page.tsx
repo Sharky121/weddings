@@ -1,4 +1,5 @@
 import { GuestHousePhotoGrid } from "@/components/GuestHousePhotoGrid";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 export const metadata = {
   title: "Гостевые дома — Усадьба Ушмор",
@@ -29,9 +30,9 @@ export default function GuestHousesPage() {
     <>
       {/* Секция-заголовок: на весь первый экран */}
       <section
-        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center bg-stone-900 bg-cover bg-center bg-no-repeat px-4 sm:px-6"
-        style={{ backgroundImage: "url(/guest_home_bg.jpg)" }}
+        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-stone-900 px-4 sm:px-6"
       >
+        <ParallaxBackground backgroundImage="/guest_home_bg.jpg" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ImageLightboxGrid } from "@/components/ImageLightbox";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { MapImageLightbox } from "@/components/MapImageLightbox";
 import { VideoHoverCard } from "@/components/VideoHoverCard";
 
@@ -23,9 +24,9 @@ export default function AboutPage() {
     <>
       {/* 1. Секция-заголовок: на весь первый экран */}
       <section
-        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center bg-stone-900 bg-cover bg-center bg-no-repeat px-4 sm:px-6"
-        style={{ backgroundImage: "url(/welcome_bg.jpg)" }}
+        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-stone-900 px-4 sm:px-6"
       >
+        <ParallaxBackground backgroundImage="/welcome_bg.jpg" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
