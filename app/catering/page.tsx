@@ -3,9 +3,9 @@ import { ImageSliderWithThumbs } from "@/components/ImageSliderWithThumbs";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 export const metadata = {
-  title: "Кейтеринг — Усадьба Ушмор",
+  title: "Кейтеринг",
   description:
-    "Выездной ресторан Solo Catering Service — кейтеринг в Усадьбе Ушмор, опыт более 5 лет.",
+    "Выездной ресторан Solo Catering Service — кейтеринг в Усадьбе Ушмор, опыт более 5 лет. Рязанская область.",
 };
 
 const cateringAdvantages = [

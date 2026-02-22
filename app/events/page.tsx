@@ -2,9 +2,9 @@ import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { VideoHoverCard } from "@/components/VideoHoverCard";
 
 export const metadata = {
-  title: "Мероприятия — Усадьба Ушмор",
+  title: "Мероприятия",
   description:
-    "Камерные мероприятия в Усадьбе Ушмор — помощь в полной организации вашего события.",
+    "Камерные мероприятия в Усадьбе Ушмор — помощь в полной организации вашего события. Рязанская область, Мещера.",
 };
 
 export default function EventsPage() {

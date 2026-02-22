@@ -1,10 +1,12 @@
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { VideoHoverCard } from "@/components/VideoHoverCard";
 
+const RUTUBE_EMBED_SRC = "https://rutube.ru/play/embed/ae266c59890921847954a254eb3c8ce1";
+
 export const metadata = {
-  title: "Венчание в храме — Усадьба Ушмор",
+  title: "Венчание",
   description:
-    "Венчание в храме Благовещения Пресвятой Богородицы в усадьбе Ушмор.",
+    "Венчание в храме Благовещения Пресвятой Богородицы в усадьбе Ушмор. Рязанская область, Мещера.",
 };
 
 export default function WeddingCeremonyPage() {
@@ -78,8 +80,8 @@ export default function WeddingCeremonyPage() {
         </a>
       </section>
 
-      {/* Секция с видео */}
-      <section className="border-t border-brand-muted/50 bg-brand-light/85 py-12 sm:py-16 lg:py-20">
+      {/* Секция с видео — по клику открывается окно с embedded Rutube */}
+      <section id="content" className="border-t border-brand-muted/50 bg-brand-light/85 py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2
             className="mb-2 text-center text-2xl font-normal tracking-wide text-brand-dark sm:text-3xl"
@@ -95,7 +97,7 @@ export default function WeddingCeremonyPage() {
           </p>
           <VideoHoverCard
             poster="/wedding_bg.jpg"
-            videoSrc="/wedding-ceremony.mp4"
+            embedSrc={RUTUBE_EMBED_SRC}
             title="Венчание в храме"
           />
         </div>

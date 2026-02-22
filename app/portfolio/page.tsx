@@ -2,9 +2,9 @@ import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { PortfolioBlock } from "@/components/PortfolioBlock";
 
 export const metadata = {
-  title: "Портфолио — Усадьба Ушмор",
+  title: "Портфолио",
   description:
-    "Портфолио свадеб и мероприятий в усадьбе Ушмор — реальные истории и фотографии наших гостей.",
+    "Портфолио свадеб и мероприятий в усадьбе Ушмор — реальные истории и фотографии наших гостей. Рязанская область.",
 };
 
 /** Пути к фото в папке portfolio/portfolio_{n}/ (порядок 1, 2, …) */

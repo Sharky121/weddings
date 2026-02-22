@@ -2,9 +2,9 @@ import { GuestHousePhotoGrid } from "@/components/GuestHousePhotoGrid";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 export const metadata = {
-  title: "Гостевые дома — Усадьба Ушмор",
+  title: "Гостевые дома",
   description:
-    "Гостевой дом усадьбы Ушмор в готическом стиле — до 12 гостей, английская и прованс части",
+    "Гостевой дом усадьбы Ушмор в готическом стиле — до 12 гостей, английская и прованс части. Рязанская область.",
 };
 
 const englishStage1Images = [

@@ -3,8 +3,10 @@ import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { YandexMap } from "@/components/YandexMap";
 
 export const metadata = {
-  title: "Контакты — Усадьба Ушмор",
-  description: "Контакты усадьбы Ушмор — адрес, телефон, форма обратной связи.",
+  title: "Контакты",
+  description:
+    "Контакты Усадьбы Ушмор: адрес (Рязанская область, Клепиковский район, д. Ушмор), телефон 8 (910) 613-00-22, email, Telegram.",
+  keywords: ["контакты усадьба ушмор", "адрес усадьбы ушмор", "как добраться ушмор"],
 };
 
 export default function ContactsPage() {

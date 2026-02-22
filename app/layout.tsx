@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Forum, Kurale, Raleway } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SITE_DEFAULT_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const raleway = Raleway({
@@ -23,8 +24,56 @@ const forum = Forum({
 });
 
 export const metadata: Metadata = {
-  title: "Усадьба — Свадьбы и мероприятия",
-  description: "Усадьба для свадеб, венчаний и мероприятий в Подмосковье",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} — Премиальные свадьбы в сердце Мещеры`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DEFAULT_DESCRIPTION,
+  keywords: [
+    "усадьба ушмор",
+    "свадьба рязанская область",
+    "свадьба мещера",
+    "аренда усадьбы под свадьбу",
+    "венчание",
+    "кейтеринг",
+    "фотосессия усадьба",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — Премиальные свадьбы в сердце Мещеры`,
+    description: SITE_DEFAULT_DESCRIPTION,
+    url: SITE_URL,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} — Премиальные свадьбы в сердце Мещеры`,
+    description: SITE_DEFAULT_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  alternates: { canonical: SITE_URL },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: SITE_NAME,
+  description: SITE_DEFAULT_DESCRIPTION,
+  url: SITE_URL,
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "Рязанская область",
+    addressLocality: "Клепиковский район",
+    streetAddress: "д. Ушмор",
+  },
+  telephone: "+79106130022",
+  email: "info@usadba-na-pre.ru",
 };
 
 export default function RootLayout({
@@ -37,6 +86,10 @@ export default function RootLayout({
       <body
         className={`${raleway.variable} ${kurale.variable} ${forum.variable} flex min-h-screen flex-col antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

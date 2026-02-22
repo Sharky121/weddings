@@ -3,7 +3,7 @@ import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { VideoHoverCard } from "@/components/VideoHoverCard";
 
 export const metadata = {
-  title: "Усадьба Ушмор — Премиальные свадьбы в сердце Мещеры",
+  title: "Премиальные свадьбы в сердце Мещеры",
   description:
     "Усадьба Ушмор — уникальное место для проведения свадьбы. Старинный парк, гостевые дома, изысканная природа Мещеры. Рязанская область.",
 };

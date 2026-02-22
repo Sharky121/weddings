@@ -4,9 +4,9 @@ import { MapImageLightbox } from "@/components/MapImageLightbox";
 import { VideoHoverCard } from "@/components/VideoHoverCard";
 
 export const metadata = {
-  title: "Об Усадьбе — Усадьба Ушмор",
+  title: "Об Усадьбе",
   description:
-    "Усадьба Ушмор в Национальном Мещерском парке — архитектурно-парковый ансамбль в стиле дворянского классицизма",
+    "Усадьба Ушмор в Национальном Мещерском парке — архитектурно-парковый ансамбль в стиле дворянского классицизма. Рязанская область, Мещера.",
 };
 
 const usadbaImages = [

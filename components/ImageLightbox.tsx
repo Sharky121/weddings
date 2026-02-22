@@ -3,9 +3,7 @@
 import Image from "next/image";
 import { useState, type ReactNode } from "react";
 import Lightbox from "yet-another-react-lightbox";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/styles.css";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 export type Slide = { src: string; alt?: string };
 
@@ -33,8 +31,6 @@ export function ImageLightbox({ slides, children }: ImageLightboxProps) {
         index={index}
         slides={slides}
         on={{ view: ({ index: i }) => setIndex(i) }}
-        plugins={[Thumbnails]}
-        thumbnails={{ position: "end", width: 100, height: 72, gap: 8, borderRadius: 6 }}
         render={{
           buttonPrev: () => null,
           buttonNext: () => null,

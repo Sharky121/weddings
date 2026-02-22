@@ -1,8 +1,10 @@
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 export const metadata = {
-  title: "Прайс-Лист — Усадьба Ушмор",
-  description: "Прайс-лист услуг усадьбы",
+  title: "Прайс-лист",
+  description:
+    "Прайс-лист услуг Усадьбы Ушмор: аренда усадьбы под мероприятие, банкет, дополнительные услуги. Рязанская область, Мещера.",
+  keywords: ["прайс усадьба ушмор", "аренда усадьбы под свадьбу", "стоимость мероприятия"],
 };
 
 const priceRows = [
@@ -127,7 +129,7 @@ export default function PricePage() {
                       </p>
                     ) : null}
                   </div>
-                  <div className="mt-4 border-t border-brand-light pt-4">
+                  <div className="mt-4 border-t border-brand-muted/40 pt-4">
                     {row.price ? (
                       <p
                         className="text-xl font-normal text-brand-dark"

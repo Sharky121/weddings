@@ -2,9 +2,9 @@ import { ImageLightboxGrid } from "@/components/ImageLightbox";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 export const metadata = {
-  title: "Фотосессии — Усадьба Ушмор",
+  title: "Фотосессии",
   description:
-    "Фотосессии в усадьбах — разнообразные локации: исторический антураж, природа и современные тренды.",
+    "Фотосессии в усадьбе Ушмор — разнообразные локации: исторический антураж, природа и современные тренды. Рязанская область.",
 };
 
 const fotosessionImages = Array.from(

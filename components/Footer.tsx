@@ -16,13 +16,13 @@ const navItems = [
 export default function Footer() {
   return (
     <footer
-      className="relative z-10 border-t border-brand-muted/50 bg-brand-light/90 py-12 sm:py-14"
+      className="relative z-10 border-t border-brand-muted/50 bg-brand-light/90 py-8 sm:py-10 lg:py-14"
       role="contentinfo"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
-          {/* Логотип и название */}
-          <div className="lg:col-span-4">
+        <div className="grid grid-cols-1 gap-8 text-center sm:gap-10 lg:grid-cols-12 lg:gap-8 lg:text-left">
+          {/* Логотип и название — мобила/планшет: по центру; десктоп: слева */}
+          <div className="flex flex-col items-center lg:col-span-4 lg:items-start">
             <Link
               href="/"
               className="inline-block text-brand-dark transition hover:text-brand-dark/80"
@@ -31,11 +31,11 @@ export default function Footer() {
               <img
                 src="/logo_ushmor_white.png"
                 alt="Усадьба Ушмор"
-                className="h-20 w-auto invert sm:h-24"
+                className="h-24 w-auto invert sm:h-28 lg:h-20 xl:h-24"
               />
             </Link>
             <p
-              className="mt-3 max-w-xs text-xs text-brand-dark"
+              className="mt-3 max-w-sm text-xs leading-relaxed text-brand-dark sm:mt-4 sm:text-sm lg:mt-2 lg:max-w-xs lg:text-[11px] lg:leading-snug"
               style={{ fontFamily: "var(--font-raleway)" }}
             >
               Премиальные свадьбы и мероприятия в сердце Мещеры. Рязанская
@@ -43,23 +43,23 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Навигация */}
-          <div className="lg:col-span-4">
+          {/* Навигация — только на десктопе */}
+          <div className="hidden flex-col items-center lg:col-span-4 lg:flex lg:items-start">
             <h3
-              className="text-xs font-medium uppercase tracking-wider text-brand-dark/80"
+              className="text-[10px] font-medium uppercase tracking-wider text-brand-dark/80 sm:text-xs"
               style={{ fontFamily: "var(--font-forum)" }}
             >
               Разделы
             </h3>
             <nav
-              className="mt-3 grid grid-cols-2 gap-x-6 gap-y-1 sm:gap-x-8"
+              className="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-1 sm:gap-x-6 lg:grid lg:grid-cols-2 lg:justify-start lg:gap-x-6 lg:gap-y-1 xl:gap-x-8"
               aria-label="Навигация по сайту"
             >
               {navItems.map(({ label, href }) => (
                 <Link
                   key={href}
                   href={href}
-                  className="text-sm text-brand-dark underline-offset-2 hover:text-brand-dark hover:underline"
+                  className="text-xs text-brand-dark underline-offset-2 hover:text-brand-dark hover:underline sm:text-sm"
                   style={{ fontFamily: "var(--font-raleway)" }}
                 >
                   {label}
@@ -68,16 +68,16 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Контакты */}
-          <div className="lg:col-span-4">
+          {/* Контакты — мобила/планшет: по центру; десктоп: слева */}
+          <div className="flex flex-col items-center lg:col-span-4 lg:items-start">
             <h3
-              className="text-xs font-medium uppercase tracking-wider text-brand-dark/80"
+              className="text-xs font-medium uppercase tracking-wider text-brand-dark/80 sm:text-sm"
               style={{ fontFamily: "var(--font-forum)" }}
             >
               Контакты
             </h3>
             <ul
-              className="mt-3 space-y-2 text-sm text-brand-dark"
+              className="mt-3 flex flex-col items-center gap-1 text-sm text-brand-dark lg:items-start lg:gap-0 lg:space-y-2"
               style={{ fontFamily: "var(--font-raleway)" }}
             >
               <li>
@@ -110,9 +110,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-brand-muted/50 pt-8">
+        <div className="mt-8 border-t border-brand-muted/50 pt-6 sm:mt-10 sm:pt-8 lg:mt-10 lg:pt-8">
           <p
-            className="text-center text-xs text-brand-dark/80"
+            className="text-center text-xs text-brand-dark/80 sm:text-sm"
             style={{ fontFamily: "var(--font-raleway)" }}
           >
             © {new Date().getFullYear()} Усадьба Ушмор. ООО «УК УШМОР».

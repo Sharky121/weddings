@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -40,7 +41,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# large media (exceeds GitHub 100MB limit; host elsewhere)
+# large media (exceeds GitHub 100MB; host elsewhere)
 /public/video.mp4
 /public/wedding-ceremony.mp4
 
@@ -81,5 +82,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# large media (exceeds GitHub 100MB limit; host elsewhere)
+# large media (exceeds GitHub 100MB; host elsewhere)
 /public/video.mp4
+/public/wedding-ceremony.mp4

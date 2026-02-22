@@ -106,9 +106,9 @@ export function ImageSliderWithThumbs({
           </button>
         </div>
       </div>
-      {/* Полоса миниатюр: на lg в одной высоте с основным слайдом, поведение по умолчанию (перетаскивание, клик) */}
+      {/* Полоса миниатюр: на мобильных — горизонтальная полоса внизу; на lg — вертикально справа */}
       <div
-        className="flex shrink-0 flex-col overflow-hidden rounded-xl lg:h-full lg:min-h-0"
+        className="flex h-20 shrink-0 flex-col overflow-hidden rounded-xl sm:h-24 lg:h-full lg:min-h-0"
         style={isVertical ? { width: 100 } : undefined}
       >
         <Swiper
@@ -123,7 +123,7 @@ export function ImageSliderWithThumbs({
           grabCursor
           touchReleaseOnEdges
           resistanceRatio={0.85}
-          className={`thumbs-slider !h-full min-h-0 flex-1 lg:!min-h-0 ${isVertical ? "direction-vertical" : ""}`}
+          className={`thumbs-slider !h-full min-h-0 lg:!min-h-0 ${isVertical ? "direction-vertical" : ""}`}
         >
           {images.map((src) => (
             <SwiperSlide

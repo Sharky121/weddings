@@ -2,9 +2,9 @@ import { ImageLightboxGrid } from "@/components/ImageLightbox";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 export const metadata = {
-  title: "Свадьба в Усадьбе Ушмор — Усадьба Ушмор",
+  title: "Свадьба в Усадьбе",
   description:
-    "Проведение свадьбы в усадьбе Ушмор — красота, торжественность и изысканность для главного дня.",
+    "Проведение свадьбы в усадьбе Ушмор — красота, торжественность и изысканность для главного дня. Локации, банкет, организация.",
 };
 
 const locations = [

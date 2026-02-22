@@ -5,18 +5,23 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 type VideoHoverCardProps = {
   poster: string;
-  videoSrc: string;
+  /** URL локального или внешнего видео для <video src>. */
+  videoSrc?: string;
+  /** URL для встраивания через iframe (например Rutube embed). При задании в модалке показывается iframe вместо video. */
+  embedSrc?: string;
   title?: string;
 };
 
-/** Карточка с постером; по клику открывается лайтбокс с видео. */
+/** Карточка с постером; по клику открывается лайтбокс с видео или с embed (iframe). */
 export function VideoHoverCard({
   poster,
   videoSrc,
+  embedSrc,
   title = "Видео",
 }: VideoHoverCardProps) {
   const [open, setOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const useEmbed = Boolean(embedSrc);
 
   const close = useCallback(() => {
     setOpen(false);
@@ -36,15 +41,15 @@ export function VideoHoverCard({
     };
   }, [open, close]);
 
-  // Автозапуск видео при открытии лайтбокса
+  // Автозапуск видео при открытии лайтбокса (только для <video>)
   useEffect(() => {
-    if (!open) return;
+    if (!open || useEmbed) return;
     const video = videoRef.current;
     if (!video) return;
     const play = () => video.play().catch(() => {});
     if (video.readyState >= 2) play();
     else video.addEventListener("loadeddata", play, { once: true });
-  }, [open]);
+  }, [open, useEmbed]);
 
   return (
     <>
@@ -105,7 +110,7 @@ export function VideoHoverCard({
           <button
             type="button"
             onClick={close}
-            className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50"
+            className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/50"
             aria-label="Закрыть"
           >
             <svg
@@ -122,18 +127,30 @@ export function VideoHoverCard({
             className="relative max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-xl bg-brand-dark shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <video
-              ref={videoRef}
-              src={videoSrc}
-              autoPlay
-              controls
-              playsInline
-              preload="auto"
-              poster={poster}
-              className="w-full"
-            >
-              Ваш браузер не поддерживает воспроизведение видео.
-            </video>
+            {useEmbed && embedSrc ? (
+              <div className="relative aspect-video w-full">
+                <iframe
+                  title={title}
+                  src={embedSrc}
+                  allow="clipboard-write; autoplay"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full"
+                />
+              </div>
+            ) : (
+              <video
+                ref={videoRef}
+                src={videoSrc}
+                autoPlay
+                controls
+                playsInline
+                preload="auto"
+                poster={poster}
+                className="w-full"
+              >
+                Ваш браузер не поддерживает воспроизведение видео.
+              </video>
+            )}
           </div>
           <div
             className="absolute inset-0 -z-10"
