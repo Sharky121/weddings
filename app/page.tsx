@@ -1,103 +1,41 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
+import { VideoHoverCard } from "@/components/VideoHoverCard";
 
-function ScrollIndicator() {
-  return (
-    <a
-      href="#content"
-      className="absolute bottom-3 left-1/2 z-10 flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full bg-white/10 text-white/90 transition hover:bg-white/15 hover:text-white"
-      aria-label="Листать вниз"
-    >
-      <svg
-        className="h-6 w-6"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 5v14M19 12l-7 7-7-7" />
-      </svg>
-    </a>
-  );
-}
-
-const sections = [
-  {
-    title: "Об Усадьбе",
-    href: "/about",
-    description:
-      "Усадьба Ушмор — уникальное место для проведения свадьбы. Старинный парк, уютные беседки, гостевые дома и изысканная природа Мещеры.",
-  },
-  {
-    title: "Свадьба в Усадьбе",
-    href: "/wedding",
-    description:
-      "Безупречный сервис и наша личная заинтересованность в результате делают каждое свадебное торжество эталоном вкуса и стиля.",
-  },
-  {
-    title: "Портфолио",
-    href: "/portfolio",
-    description:
-      "О том, как проходят наши мероприятия и свадьбы, лучше любых слов расскажет портфолио — от камерного торжества до большой классической свадьбы.",
-  },
-  {
-    title: "Гостевые дома",
-    href: "/guest-houses",
-    description:
-      "Комфортные и роскошные номера в наших гостевых домах подарят вам незабываемые впечатления и исключительный уют.",
-  },
-  {
-    title: "Кейтеринг",
-    href: "/catering",
-    description:
-      "Банкет, гала-ужин, фуршет — безукоризненный сервис и богатство вкусов для вашего торжества.",
-  },
-  {
-    title: "Фотосессии",
-    href: "/photo-sessions",
-    description:
-      "Мы открыты для фотосессий, рекламных и fashion-съёмок в усадьбе на лоне природы.",
-  },
-  {
-    title: "Венчание",
-    href: "/wedding-ceremony",
-    description:
-      "Проведение венчания в усадьбе — атмосфера и условия для вашего таинства.",
-  },
-];
+export const metadata = {
+  title: "Усадьба Ушмор — Премиальные свадьбы в сердце Мещеры",
+  description:
+    "Усадьба Ушмор — уникальное место для проведения свадьбы. Старинный парк, гостевые дома, изысканная природа Мещеры. Рязанская область.",
+};
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero: ровно по высоте экрана (минус шапка) */}
+      {/* Секция-заголовок — как на остальных страницах */}
       <section
         id="hero"
-        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-stone-900 px-4 sm:px-6"
+        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
         <ParallaxBackground
           backgroundImage="/welcome_bg.jpg"
           backgroundPosition="center 25%"
         />
-        <div className="absolute inset-0 bg-black/30" aria-hidden />
-        <div className="relative z-10 flex min-h-0 flex-1 flex-col items-center justify-center gap-4 py-4 text-center text-white sm:gap-5 sm:py-6">
-          <div className="flex flex-col items-center gap-1.5 sm:gap-2">
-            <p
-              className="text-center text-xl font-semibold uppercase tracking-[0.2em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] sm:text-2xl md:text-3xl"
-              style={{ fontFamily: "var(--font-kurale)" }}
-            >
-              Премиальные свадьбы в сердце Мещеры
-            </p>
-            <p
-              className="max-w-xl text-center text-lg leading-relaxed drop-shadow-[0_2px_16px_rgba(0,0,0,0.5)] sm:text-xl md:text-2xl"
-              style={{ fontFamily: "var(--font-kurale)" }}
-            >
-              Изысканность и роскошь на лоне природы
-            </p>
-          </div>
-          <div className="mt-4 flex flex-shrink-0 flex-wrap items-center justify-center gap-6 sm:mt-6 sm:gap-8">
+        <div className="absolute inset-0 bg-black/40" aria-hidden />
+        <div className="relative z-10 max-w-2xl text-center">
+          <h1
+            className="mb-4 text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
+            style={{ fontFamily: "var(--font-forum)" }}
+          >
+            Усадьба Ушмор
+          </h1>
+          <p
+            className="mb-6 text-base leading-relaxed text-white/95 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-lg"
+            style={{ fontFamily: "var(--font-raleway)" }}
+          >
+            Премиальные свадьбы в сердце Мещеры. Изысканность и роскошь на лоне
+            природы.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8">
             <Image
               src="/top_awards_logo.svg"
               alt="100 лучших площадок"
@@ -114,87 +52,106 @@ export default function HomePage() {
             />
           </div>
         </div>
-        <ScrollIndicator />
+        <a
+          href="#content"
+          className="group absolute bottom-8 left-1/2 z-10 flex h-12 w-12 -translate-x-1/2 items-center justify-center overflow-visible rounded-full text-white/90 transition hover:text-white"
+          aria-label="Листать вниз"
+        >
+          <span
+            className="pointer-events-none absolute inset-0 rounded-full border-2 border-white/50"
+            aria-hidden
+            style={{
+              animation: "scroll-ripple-wave 2s ease-out infinite",
+              animationDelay: "0s",
+            }}
+          />
+          <span
+            className="pointer-events-none absolute inset-0 rounded-full border-2 border-white/50"
+            aria-hidden
+            style={{
+              animation: "scroll-ripple-wave 2s ease-out infinite",
+              animationDelay: "0.65s",
+            }}
+          />
+          <span
+            className="pointer-events-none absolute inset-0 rounded-full border-2 border-white/50"
+            aria-hidden
+            style={{
+              animation: "scroll-ripple-wave 2s ease-out infinite",
+              animationDelay: "1.3s",
+            }}
+          />
+          <span
+            className="absolute inset-0 rounded-full bg-white/10 transition-colors group-hover:bg-white/15"
+            aria-hidden
+          />
+          <svg
+            className="relative z-10 h-6 w-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M12 5v14M19 12l-7 7-7-7" />
+          </svg>
+        </a>
       </section>
 
-      {/* Блок «Усадьба для свадьбы» */}
+      {/* Блок «Усадьба для свадьбы» — цитата */}
       <section
         id="content"
-        className="border-t border-stone-200 bg-white py-14 sm:py-20"
+        className="border-t border-brand-muted/50 bg-brand-light/80 py-14 sm:py-16 lg:py-24"
       >
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2
-            className="mb-6 text-center text-2xl font-normal tracking-wide text-stone-800 sm:text-3xl"
-            style={{ fontFamily: "var(--font-forum)" }}
-          >
-            Усадьба для свадьбы в Подмосковье
-          </h2>
-          <p className="mb-4 text-center leading-relaxed text-stone-600">
-            Усадьба Ушмор — уникальное место для проведения свадьбы в
-            Подмосковье. Наша усадьба — это не просто красивый архитектурный
-            комплекс: старинный парк и сад, беседки и аллеи, гостевые дома и
-            изысканная природа Мещеры.
-          </p>
-          <p className="text-center leading-relaxed text-stone-600">
-            Место, в котором мы принимаем гостей, проводим свадьбы и торжества
-            и каждый день отдаём своё сердце и душу.
-          </p>
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <blockquote className="relative text-center">
+            <span
+              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
+              aria-hidden
+            >
+              {"\u201C"}
+            </span>
+            <p
+              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
+              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
+            >
+              Усадьба Ушмор — уникальное место для проведения свадьбы в
+              Подмосковье. Наша усадьба — это не просто красивый архитектурный
+              комплекс: старинный парк и сад, беседки и аллеи, гостевые дома и
+              изысканная природа Мещеры.
+            </p>
+            <p
+              className="mt-6 text-lg leading-loose text-brand-dark sm:text-xl lg:text-2xl"
+              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
+            >
+              Место, в котором мы принимаем гостей, проводим свадьбы и торжества
+              и каждый день отдаём своё сердце и душу.
+            </p>
+          </blockquote>
         </div>
       </section>
 
-      {/* Карточки разделов: 4 в первой строке, 3 во второй по центру под первой */}
-      <section className="border-t border-stone-200 bg-stone-50/50 py-14 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
-            {sections.slice(0, 4).map(({ title, href, description }) => (
-              <article
-                key={href}
-                className="rounded-lg border border-stone-200 bg-white p-6 shadow-sm transition hover:shadow-md sm:p-8"
-              >
-                <h3
-                  className="mb-3 text-xl font-normal tracking-wide text-stone-800 sm:text-2xl"
-                  style={{ fontFamily: "var(--font-forum)" }}
-                >
-                  {title}
-                </h3>
-                <p className="mb-5 leading-relaxed text-stone-600">
-                  {description}
-                </p>
-                <Link
-                  href={href}
-                  className="inline-block text-sm font-medium uppercase tracking-wider text-amber-800 hover:text-amber-900"
-                  style={{ fontFamily: "var(--font-raleway)" }}
-                >
-                  Подробнее
-                </Link>
-              </article>
-            ))}
-          </div>
-          <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-3 sm:gap-10 lg:gap-10">
-            {sections.slice(4, 7).map(({ title, href, description }) => (
-              <article
-                key={href}
-                className="rounded-lg border border-stone-200 bg-white p-6 shadow-sm transition hover:shadow-md sm:p-8"
-              >
-                <h3
-                  className="mb-3 text-xl font-normal tracking-wide text-stone-800 sm:text-2xl"
-                  style={{ fontFamily: "var(--font-forum)" }}
-                >
-                  {title}
-                </h3>
-                <p className="mb-5 leading-relaxed text-stone-600">
-                  {description}
-                </p>
-                <Link
-                  href={href}
-                  className="inline-block text-sm font-medium uppercase tracking-wider text-amber-800 hover:text-amber-900"
-                  style={{ fontFamily: "var(--font-raleway)" }}
-                >
-                  Подробнее
-                </Link>
-              </article>
-            ))}
-          </div>
+      {/* Секция с видео */}
+      <section className="border-t border-brand-muted/50 bg-brand-light/85 py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2
+            className="mb-2 text-center text-2xl font-normal tracking-wide text-brand-dark sm:text-3xl"
+            style={{ fontFamily: "var(--font-forum)" }}
+          >
+            Видео
+          </h2>
+          <p
+            className="mb-8 text-center text-brand-dark"
+            style={{ fontFamily: "var(--font-raleway)" }}
+          >
+            Усадьба в кадре
+          </p>
+          <VideoHoverCard
+            poster="/welcome_bg.jpg"
+            videoSrc="/wedding_video.mp4"
+            title="Усадьба Ушмор"
+          />
         </div>
       </section>
     </>

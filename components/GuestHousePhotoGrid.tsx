@@ -20,7 +20,7 @@ export function GuestHousePhotoGrid({ images, labels }: Props) {
               key={src}
               type="button"
               onClick={() => openAt(i)}
-              className={`group cursor-pointer overflow-hidden rounded-lg text-left shadow-sm transition-shadow duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-stone-300 focus:ring-offset-2 ${
+              className={`group cursor-pointer overflow-hidden rounded-lg text-left shadow-sm transition-shadow duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-muted focus:ring-offset-2 ${
                 i === 0
                   ? "col-span-2 row-span-2 min-h-[200px] sm:min-h-[260px]"
                   : "min-h-[120px] sm:min-h-[140px]"

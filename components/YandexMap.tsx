@@ -4,18 +4,45 @@ import { useEffect, useRef } from "react";
 
 const YANDEX_MAPS_SCRIPT = "https://api-maps.yandex.ru/2.1/?lang=ru_RU";
 
+let loadPromise: Promise<void> | null = null;
+
+function loadYandexMapsScript(): Promise<void> {
+  if (typeof window === "undefined") return Promise.resolve();
+  if (window.ymaps) return Promise.resolve();
+  if (document.querySelector(`script[src="${YANDEX_MAPS_SCRIPT}"]`)) {
+    return loadPromise ?? new Promise((resolve) => {
+      const check = () => {
+        if (window.ymaps) return resolve();
+        requestAnimationFrame(check);
+      };
+      check();
+    });
+  }
+  loadPromise = new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = YANDEX_MAPS_SCRIPT;
+    script.async = true;
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error("Yandex Maps script failed to load"));
+    document.head.appendChild(script);
+  });
+  return loadPromise;
+}
+
+type YandexMapInstance = {
+  geoObjects: { add: (obj: object) => void };
+  destroy: () => void;
+};
+
 declare global {
   interface Window {
     ymaps?: {
       ready: (cb: () => void) => void;
       Map: new (
         element: string | HTMLElement,
-        state: { center: number[]; zoom: number },
+        state: { center: number[]; zoom: number; controls?: string[] },
         options?: object
-      ) => {
-        geoObjects: { add: (obj: object) => void };
-        destroy: () => void;
-      };
+      ) => YandexMapInstance;
       Placemark: new (
         geometry: number[],
         properties: { balloonContentHeader?: string; balloonContentBody?: string; balloonContentFooter?: string },
@@ -42,26 +69,14 @@ export function YandexMap({
   className = "h-[280px] w-full rounded-xl overflow-hidden",
 }: YandexMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<ReturnType<Window["ymaps"]["Map"]> | null>(null);
+  const mapRef = useRef<YandexMapInstance | null>(null);
   const initedRef = useRef(false);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container || initedRef.current) return;
 
-    const loadScript = (): Promise<void> => {
-      if (window.ymaps) return Promise.resolve();
-      return new Promise((resolve, reject) => {
-        const script = document.createElement("script");
-        script.src = YANDEX_MAPS_SCRIPT;
-        script.async = true;
-        script.onload = () => resolve();
-        script.onerror = () => reject(new Error("Yandex Maps script failed to load"));
-        document.head.appendChild(script);
-      });
-    };
-
-    loadScript()
+    loadYandexMapsScript()
       .then(() => {
         if (!window.ymaps || !container || initedRef.current) return;
         window.ymaps.ready(() => {

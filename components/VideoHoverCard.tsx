@@ -51,9 +51,9 @@ export function VideoHoverCard({
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="group relative w-full overflow-hidden rounded-2xl border border-stone-200/80 bg-stone-900 text-left shadow-lg transition-all duration-300 hover:border-stone-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2"
+        className="group relative w-full overflow-hidden rounded-2xl border border-brand-muted/50 bg-brand-dark text-left shadow-lg transition-all duration-300 hover:border-brand-muted/60 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-brand-muted focus:ring-offset-2"
       >
-        <div className="relative aspect-[3/4] w-full overflow-hidden bg-stone-800 sm:aspect-video">
+        <div className="relative aspect-[3/4] w-full overflow-hidden bg-brand-dark sm:aspect-video">
           <Image
             src={poster}
             alt=""
@@ -119,7 +119,7 @@ export function VideoHoverCard({
             </svg>
           </button>
           <div
-            className="relative max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-xl bg-stone-900 shadow-2xl"
+            className="relative max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-xl bg-brand-dark shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <video

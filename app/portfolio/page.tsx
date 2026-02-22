@@ -27,7 +27,7 @@ export default function PortfolioPage() {
     <>
       {/* Секция-заголовок: на весь первый экран */}
       <section
-        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-stone-900 px-4 sm:px-6"
+        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
         <ParallaxBackground backgroundImage="/welcome_bg.jpg" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
@@ -95,7 +95,7 @@ export default function PortfolioPage() {
       {/* Секция с блоками портфолио */}
       <section
         id="content"
-        className="border-t border-stone-200 bg-stone-50 py-12 sm:py-16 lg:py-20"
+        className="border-t border-brand-muted/50 bg-brand-light/85 py-12 sm:py-16 lg:py-20"
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">

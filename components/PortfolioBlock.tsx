@@ -21,9 +21,9 @@ export function PortfolioBlock({ title, images }: PortfolioBlockProps) {
         <button
           type="button"
           onClick={() => openAt(0)}
-          className="group relative w-full cursor-pointer overflow-hidden rounded-2xl border border-stone-200/80 bg-white text-left shadow-md transition-all duration-300 hover:border-stone-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2"
+          className="group relative w-full cursor-pointer overflow-hidden rounded-2xl border border-brand-muted/50 bg-white text-left shadow-md transition-all duration-300 hover:border-brand-muted/60 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-brand-muted focus:ring-offset-2"
         >
-          <div className="relative aspect-[3/4] w-full overflow-hidden bg-stone-200">
+          <div className="relative aspect-[3/4] w-full overflow-hidden bg-brand-muted">
             <Image
               src={images[0] ?? ""}
               alt={title}

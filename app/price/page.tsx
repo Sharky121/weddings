@@ -16,7 +16,7 @@ const priceRows = [
   {
     name: "Аренда Зимнего Сада Графского Дома",
     price: null,
-    image: "/catering/catering_1.jpg",
+    image: "/usadba_1.jpg",
   },
   {
     name: "Аренда гостевого дома (Размещение до 12 гостей)",
@@ -30,7 +30,7 @@ export default function PricePage() {
     <>
       {/* Секция-заголовок */}
       <section
-        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-stone-900 px-4 sm:px-6"
+        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
         <ParallaxBackground backgroundImage="/welcome_bg.jpg" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
@@ -96,16 +96,16 @@ export default function PricePage() {
       </section>
 
       {/* Прайс — три карточки с изображением, описанием и ценой */}
-      <section id="content" className="border-t border-stone-200 bg-stone-50 py-12 sm:py-16 lg:py-20">
+      <section id="content" className="border-t border-brand-muted/50 bg-brand-light/85 py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-3">
             {priceRows.map((row, index) => (
               <article
                 key={index}
-                className="flex flex-col overflow-hidden rounded-2xl border border-stone-200/80 bg-white shadow-sm transition-shadow hover:shadow-md"
+                className="flex flex-col overflow-hidden rounded-2xl border border-brand-muted/50 bg-white shadow-sm transition-shadow hover:shadow-md"
               >
                 <div
-                  className="relative h-40 flex-shrink-0 bg-stone-200 bg-cover bg-center bg-no-repeat sm:h-48"
+                  className="relative h-40 flex-shrink-0 bg-brand-muted bg-cover bg-center bg-no-repeat sm:h-48"
                   style={{ backgroundImage: `url(${row.image})` }}
                 >
                   <div className="absolute inset-0 bg-black/30" aria-hidden />
@@ -113,31 +113,31 @@ export default function PricePage() {
                 <div className="flex flex-1 flex-col px-5 py-4 text-center sm:px-6 sm:py-5">
                   <div className="flex-1">
                     <h2
-                      className="text-lg font-normal leading-snug text-stone-800 sm:text-xl"
+                      className="text-lg font-normal leading-snug text-brand-dark sm:text-xl"
                       style={{ fontFamily: "var(--font-forum)" }}
                     >
                       {row.name}
                     </h2>
                     {"detail" in row && row.detail ? (
                       <p
-                        className="mt-2 text-sm leading-relaxed text-stone-600"
+                        className="mt-2 text-sm leading-relaxed text-brand-dark"
                         style={{ fontFamily: "var(--font-raleway)" }}
                       >
                         {row.detail}
                       </p>
                     ) : null}
                   </div>
-                  <div className="mt-4 border-t border-stone-100 pt-4">
+                  <div className="mt-4 border-t border-brand-light pt-4">
                     {row.price ? (
                       <p
-                        className="text-xl font-normal text-stone-800"
+                        className="text-xl font-normal text-brand-dark"
                         style={{ fontFamily: "var(--font-forum)" }}
                       >
                         {row.price}
                       </p>
                     ) : (
                       <p
-                        className="text-stone-500"
+                        className="text-brand-dark/80"
                         style={{ fontFamily: "var(--font-raleway)" }}
                       >
                         По запросу

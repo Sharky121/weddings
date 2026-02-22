@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ImageLightboxGrid } from "@/components/ImageLightbox";
 import { ImageSliderWithThumbs } from "@/components/ImageSliderWithThumbs";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 
@@ -30,7 +29,7 @@ export default function CateringPage() {
     <>
       {/* Секция-заголовок: на весь первый экран */}
       <section
-        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-stone-900 px-4 sm:px-6"
+        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
         <ParallaxBackground backgroundImage="/catering_bg.jpg" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
@@ -98,17 +97,17 @@ export default function CateringPage() {
       </section>
 
       {/* Секция с описанием — цитата */}
-      <section id="content" className="border-t border-stone-200 bg-stone-50 py-14 sm:py-16 lg:py-24">
+      <section id="content" className="border-t border-brand-muted/50 bg-brand-light/85 py-14 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <blockquote className="relative text-center">
             <span
-              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-stone-200 sm:text-8xl"
+              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
               aria-hidden
             >
               {"\u201C"}
             </span>
             <p
-              className="relative pt-8 text-lg leading-loose text-stone-600 sm:pt-10 sm:text-xl lg:text-2xl"
+              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
               style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
             >
               Профессионалы высочайшего класса, квалифицированные повара и
@@ -124,17 +123,11 @@ export default function CateringPage() {
       </section>
 
       {/* Логотип и преимущества */}
-      <section className="border-t border-stone-200 bg-stone-50/60 py-14 sm:py-20 lg:py-24">
+      <section className="border-t border-brand-muted/50 bg-brand-light/60 py-14 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2
-            className="mb-8 border-b border-stone-200 pb-3 text-2xl font-normal tracking-wide text-stone-800 sm:mb-10 sm:text-3xl"
-            style={{ fontFamily: "var(--font-forum)" }}
-          >
-            Преимущества
-          </h2>
           <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2 lg:gap-8">
             {/* Логотип — равная высота с соседним блоком */}
-            <div className="flex flex-col rounded-2xl border border-stone-200/80 bg-white shadow-sm">
+            <div className="flex flex-col rounded-2xl border border-brand-muted/50 bg-white shadow-sm">
               <div className="flex min-h-full flex-1 flex-col items-center justify-center px-8 py-10 sm:px-12 sm:py-12">
                 <Image
                   src="/catering_logo.svg"
@@ -146,14 +139,14 @@ export default function CateringPage() {
               </div>
             </div>
             {/* Список преимуществ — равная высота */}
-            <div className="flex flex-col rounded-2xl border border-stone-200/80 bg-white px-6 py-8 shadow-sm sm:px-10 sm:py-10">
+            <div className="flex flex-col rounded-2xl border border-brand-muted/50 bg-white px-6 py-8 shadow-sm sm:px-10 sm:py-10">
               <ul
-                className="flex-1 space-y-4 text-stone-700 sm:text-lg"
+                className="flex-1 space-y-4 text-brand-dark sm:text-lg"
                 style={{ fontFamily: "var(--font-raleway)" }}
               >
                 {cateringAdvantages.map((item) => (
                   <li key={item} className="flex items-center gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-stone-100 text-stone-500">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-light text-brand-dark/80">
                       <svg
                         className="h-4 w-4"
                         viewBox="0 0 24 24"
@@ -176,23 +169,23 @@ export default function CateringPage() {
       </section>
 
       {/* Банкет и Гала-Ужин */}
-      <section className="border-t border-stone-200 bg-stone-50 py-14 sm:py-16 lg:py-24">
+      <section className="border-t border-brand-muted/50 bg-brand-light/85 py-14 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="mb-8 text-center text-2xl font-normal tracking-wide text-stone-800 sm:text-3xl"
+            className="mb-8 text-center text-2xl font-normal tracking-wide text-brand-dark sm:text-3xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
             Банкет и Гала-Ужин
           </h2>
           <blockquote className="relative text-center">
             <span
-              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-stone-200 sm:text-8xl"
+              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
               aria-hidden
             >
               {"\u201C"}
             </span>
             <p
-              className="relative pt-8 text-lg leading-loose text-stone-600 sm:pt-10 sm:text-xl lg:text-2xl"
+              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
               style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
             >
               Эстетика, вкус, сервис и комфорт — гаранты безупречных банкетов. Мы
@@ -204,7 +197,7 @@ export default function CateringPage() {
       </section>
 
       {/* Фотографии банкета — слайдер с миниатюрами на странице */}
-      <section className="border-t border-stone-200 bg-white py-12 sm:py-16 lg:py-20">
+      <section className="border-t border-brand-muted/50 bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <ImageSliderWithThumbs
             images={cateringBanquetImages}

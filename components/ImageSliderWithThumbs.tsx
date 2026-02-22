@@ -43,8 +43,9 @@ export function ImageSliderWithThumbs({
   }, []);
 
   const onMainSwiper = useCallback((swiper: SwiperType) => {
-    (swiper.params.navigation as { prevEl?: HTMLElement; nextEl?: HTMLElement }).prevEl = mainPrevRef.current;
-    (swiper.params.navigation as { prevEl?: HTMLElement; nextEl?: HTMLElement }).nextEl = mainNextRef.current;
+    const nav = swiper.params.navigation as { prevEl?: HTMLElement; nextEl?: HTMLElement };
+    nav.prevEl = mainPrevRef.current ?? undefined;
+    nav.nextEl = mainNextRef.current ?? undefined;
     swiper.navigation?.init();
     swiper.navigation?.update();
   }, []);
@@ -52,13 +53,13 @@ export function ImageSliderWithThumbs({
   if (images.length === 0) return null;
 
   const arrowClass =
-    "absolute z-10 flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 bg-white/90 text-stone-600 shadow transition hover:bg-white hover:text-stone-800 disabled:pointer-events-none disabled:opacity-40";
+    "absolute z-10 flex h-9 w-9 items-center justify-center rounded-full border border-brand-muted/50 bg-white/90 text-brand-dark shadow transition hover:bg-white hover:text-brand-dark disabled:pointer-events-none disabled:opacity-40";
 
   return (
     <div className="flex flex-col gap-4 lg:flex-row lg:gap-6 lg:[aspect-ratio:16/9]">
       {/* Основной слайдер: на lg задаёт высоту блока через aspect-ratio родителя */}
       <div className="relative min-h-0 flex-1 overflow-hidden rounded-xl">
-        <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-stone-100 lg:absolute lg:inset-0 lg:aspect-auto lg:h-full">
+        <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-brand-light lg:absolute lg:inset-0 lg:aspect-auto lg:h-full">
           <Swiper
             modules={[Thumbs, Navigation]}
             thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
@@ -70,7 +71,7 @@ export function ImageSliderWithThumbs({
           >
             {images.map((src, i) => (
               <SwiperSlide key={src} className="!h-full">
-                <div className="relative h-full w-full bg-stone-100">
+                <div className="relative h-full w-full bg-brand-light">
                   <Image
                     src={src}
                     alt={labels[i] ?? `Фото ${i + 1}`}
@@ -129,7 +130,7 @@ export function ImageSliderWithThumbs({
               key={src}
               className="!h-16 !w-20 !shrink-0 cursor-pointer sm:!h-20 sm:!w-28 lg:!h-[72px] lg:!w-[100px]"
             >
-              <div className="relative h-full w-full overflow-hidden rounded-lg border-2 border-transparent transition-all [.swiper-slide-thumb-active_&]:border-stone-400 [.swiper-slide-thumb-active_&]:ring-2 [.swiper-slide-thumb-active_&]:ring-stone-300 [.swiper-slide-thumb-active_&]:ring-offset-2">
+              <div className="relative h-full w-full overflow-hidden rounded-lg border-2 border-transparent transition-all [.swiper-slide-thumb-active_&]:border-brand-muted/60 [.swiper-slide-thumb-active_&]:ring-2 [.swiper-slide-thumb-active_&]:ring-brand-muted/60 [.swiper-slide-thumb-active_&]:ring-offset-2">
                 <Image
                   src={src}
                   alt=""

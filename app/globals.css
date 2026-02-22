@@ -1,13 +1,22 @@
 @import "tailwindcss";
 
+/* Фирменные цвета — светлые, нежные */
 :root {
-  --background: #fafaf9;
-  --foreground: #292524;
+  --background: rgb(252 251 249);
+  --foreground: rgb(140 132 132);
+  --brand-dark: 140 132 132;
+  --brand-muted: 195 210 218;
+  --brand-light: 252 250 248;
+  --brand-accent: 198 200 168;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand-dark: 140 132 132;
+  --color-brand-muted: 195 210 218;
+  --color-brand-light: 252 250 248;
+  --color-brand-accent: 198 200 168;
   --font-sans: var(--font-raleway);
   --font-mono: var(--font-raleway);
   --font-raleway: var(--font-raleway);
@@ -22,6 +31,7 @@ body {
   font-family: var(--font-raleway), Arial, Helvetica, sans-serif;
 }
 
+
 @keyframes scroll-ripple-wave {
   0% {
     transform: scale(0.5);
@@ -31,6 +41,19 @@ body {
     transform: scale(1.8);
     opacity: 0;
   }
+}
+
+/* Мягкое появление фона секции-заголовка (Об Усадьбе) */
+@keyframes hero-bg-soft-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hero-bg-soft-in {
+  animation: hero-bg-soft-in 1.8s ease-out both;
 }
 
 /* Полоса миниатюр: ограниченная область и прокрутка */
@@ -46,6 +69,6 @@ body {
 }
 /* Активная миниатюра в слайдере */
 .thumbs-slider .swiper-slide-thumb-active > div {
-  border-color: rgb(168 162 158);
-  box-shadow: 0 0 0 2px rgb(214 211 209);
+  border-color: rgb(195 210 218);
+  box-shadow: 0 0 0 2px rgb(252 250 248);
 }

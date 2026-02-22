@@ -85,8 +85,8 @@ export function ImageLightboxGrid({
       ? `${gridClassName} items-start`
       : gridClassName;
   const buttonClass = useTile
-    ? "group mb-3 sm:mb-4 cursor-pointer overflow-hidden rounded-xl bg-stone-100 text-left shadow-sm transition-shadow duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-stone-300 focus:ring-offset-2 break-inside-avoid"
-    : "group cursor-pointer overflow-hidden rounded-xl bg-stone-100 text-left shadow-sm transition-shadow duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-stone-300 focus:ring-offset-2";
+    ? "group mb-3 sm:mb-4 cursor-pointer overflow-hidden rounded-xl bg-brand-light text-left shadow-sm transition-shadow duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-muted focus:ring-offset-2 break-inside-avoid"
+    : "group cursor-pointer overflow-hidden rounded-xl bg-brand-light text-left shadow-sm transition-shadow duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-muted focus:ring-offset-2";
 
   return (
     <ImageLightbox slides={slides}>

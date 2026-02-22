@@ -12,7 +12,7 @@ export default function EventsPage() {
     <>
       {/* Секция-заголовок: на весь первый экран */}
       <section
-        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-stone-900 px-4 sm:px-6"
+        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
         <ParallaxBackground backgroundImage="/welcome_bg.jpg" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
@@ -79,14 +79,20 @@ export default function EventsPage() {
       </section>
 
       {/* Секция с видео */}
-      <section id="content" className="border-t border-stone-200 bg-stone-50 py-12 sm:py-16 lg:py-20">
+      <section id="content" className="border-t border-brand-muted/50 bg-brand-light/85 py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="mb-8 text-center text-2xl font-normal tracking-wide text-stone-800 sm:text-3xl"
+            className="mb-2 text-center text-2xl font-normal tracking-wide text-brand-dark sm:text-3xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
             Видео
           </h2>
+          <p
+            className="mb-8 text-center text-brand-dark"
+            style={{ fontFamily: "var(--font-raleway)" }}
+          >
+            Как проходят мероприятия в усадьбе
+          </p>
           <VideoHoverCard
             poster="/welcome_bg.jpg"
             videoSrc="/wedding_video.mp4"

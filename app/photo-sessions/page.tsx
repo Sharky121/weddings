@@ -17,7 +17,7 @@ export default function PhotoSessionsPage() {
     <>
       {/* Секция-заголовок */}
       <section
-        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-stone-900 px-4 sm:px-6"
+        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
         <ParallaxBackground backgroundImage="/welcome_bg.jpg" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
@@ -87,18 +87,18 @@ export default function PhotoSessionsPage() {
       {/* Секция-описание — цитата */}
       <section
         id="content"
-        className="border-t border-stone-200 bg-stone-50 py-14 sm:py-16 lg:py-24"
+        className="border-t border-brand-muted/50 bg-brand-light/85 py-14 sm:py-16 lg:py-24"
       >
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <blockquote className="relative text-center">
             <span
-              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-stone-200 sm:text-8xl"
+              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
               aria-hidden
             >
               {"\u201C"}
             </span>
             <p
-              className="relative pt-8 text-lg leading-loose text-stone-600 sm:pt-10 sm:text-xl lg:text-2xl"
+              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
               style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
             >
               Дворянская и Пушкинская эпохи, серебряный век, сказочный и
@@ -106,7 +106,7 @@ export default function PhotoSessionsPage() {
               классика, фэшн и бьюти-портрет.
             </p>
             <p
-              className="relative mt-6 text-lg leading-loose text-stone-600 sm:text-xl lg:text-2xl"
+              className="relative mt-6 text-lg leading-loose text-brand-dark sm:text-xl lg:text-2xl"
               style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
             >
               Наши Усадьбы подойдут под любую вашу самую изысканную и уникальную
@@ -117,12 +117,13 @@ export default function PhotoSessionsPage() {
       </section>
 
       {/* Фотографии фотосессий — плитка с сохранением пропорций */}
-      <section className="border-t border-stone-200 bg-white py-12 sm:py-16 lg:py-20">
+      <section className="border-t border-brand-muted/50 bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <ImageLightboxGrid
             images={fotosessionImages}
             labels={fotosessionImages.map((_, i) => `Фотосессия — фото ${i + 1}`)}
-            gridClassName="grid grid-cols-3 gap-3 sm:gap-4"
+            gridClassName="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3"
+            imageClassName="h-72 w-full object-cover sm:h-80 lg:h-96"
           />
         </div>
       </section>

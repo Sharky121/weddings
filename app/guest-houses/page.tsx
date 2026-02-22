@@ -30,7 +30,7 @@ export default function GuestHousesPage() {
     <>
       {/* Секция-заголовок: на весь первый экран */}
       <section
-        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-stone-900 px-4 sm:px-6"
+        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
         <ParallaxBackground backgroundImage="/guest_home_bg.jpg" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
@@ -98,18 +98,18 @@ export default function GuestHousesPage() {
       </section>
 
       {/* Общий заголовок для обеих частей */}
-      <section id="content" className="border-t border-stone-200 bg-stone-50/80 py-14 sm:py-16 lg:py-24">
+      <section id="content" className="border-t border-brand-muted/50 bg-brand-light/80 py-14 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <p
-            className="text-center text-xl text-stone-700 tracking-wide sm:text-2xl lg:text-3xl"
+            className="text-center text-xl text-brand-dark tracking-wide sm:text-2xl lg:text-3xl"
             style={{ fontFamily: "var(--font-forum)", lineHeight: 1.6 }}
           >
             Гостевой дом состоит из двух изолированных частей
             <br />
-            <span className="font-semibold text-stone-900">Английская</span> и <span className="font-semibold text-stone-900">Прованс</span>.
+            <span className="font-semibold text-brand-dark">Английская</span> и <span className="font-semibold text-brand-dark">Прованс</span>.
           </p>
           <p
-            className="mt-4 text-center text-lg font-normal tracking-wide text-stone-600 sm:text-xl"
+            className="mt-4 text-center text-lg font-normal tracking-wide text-brand-dark sm:text-xl"
             style={{ fontFamily: "var(--font-forum)", lineHeight: 1.6 }}
           >
             Площадь дома — 400м², готов принять до 12 гостей.
@@ -118,10 +118,10 @@ export default function GuestHousesPage() {
       </section>
 
       {/* Английская часть */}
-      <section className="border-t border-stone-200 bg-white py-12 sm:py-16 lg:py-20">
+      <section className="border-t border-brand-muted/50 bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="mb-12 border-b border-stone-200 pb-3 text-2xl font-normal text-stone-800 sm:text-3xl"
+            className="mb-12 border-b border-brand-muted/50 pb-3 text-2xl font-normal text-brand-dark sm:text-3xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
             Английская часть
@@ -130,17 +130,17 @@ export default function GuestHousesPage() {
           {/* 1 этаж */}
           <div className="grid gap-8 lg:grid-cols-12 lg:gap-12 lg:items-start">
             <div className="lg:col-span-4">
-              <p className="mb-2 text-2xl font-medium tracking-wide text-stone-700 sm:text-3xl" style={{ fontFamily: "var(--font-forum)" }}>
+              <p className="mb-2 text-2xl font-medium tracking-wide text-brand-dark sm:text-3xl" style={{ fontFamily: "var(--font-forum)" }}>
                 1 этаж
               </p>
               <p
-                className="mb-4 text-stone-500 italic"
+                className="mb-4 text-brand-dark/80 italic"
                 style={{ fontFamily: "var(--font-raleway)" }}
               >
                 Общая зона для приёма гостей и отдыха.
               </p>
               <p
-                className="text-stone-700 leading-relaxed"
+                className="text-brand-dark leading-relaxed"
                 style={{ fontFamily: "var(--font-raleway)" }}
               >
                 Гостевой салон с камином.
@@ -154,17 +154,17 @@ export default function GuestHousesPage() {
 
           <div className="mt-16 grid gap-8 lg:grid-cols-12 lg:gap-12 lg:items-start">
             <div className="lg:col-span-4">
-              <p className="mb-2 text-2xl font-medium tracking-wide text-stone-700 sm:text-3xl" style={{ fontFamily: "var(--font-forum)" }}>
+              <p className="mb-2 text-2xl font-medium tracking-wide text-brand-dark sm:text-3xl" style={{ fontFamily: "var(--font-forum)" }}>
                 2 этаж
               </p>
               <p
-                className="mb-4 text-stone-500 italic"
+                className="mb-4 text-brand-dark/80 italic"
                 style={{ fontFamily: "var(--font-raleway)" }}
               >
                 Просторные номера и общие зоны.
               </p>
               <ul
-                className="list-inside list-disc space-y-1.5 text-stone-700 leading-relaxed"
+                className="list-inside list-disc space-y-1.5 text-brand-dark leading-relaxed"
                 style={{ fontFamily: "var(--font-raleway)" }}
               >
                 <li>Три двухкомнатных номера с отдельными ванными (душ) и балконами</li>
@@ -180,10 +180,10 @@ export default function GuestHousesPage() {
       </section>
 
       {/* Часть Прованс */}
-      <section className="border-t border-stone-200 bg-stone-50/50 py-12 sm:py-16 lg:py-20">
+      <section className="border-t border-brand-muted/50 bg-brand-light/50 py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="mb-12 border-b border-stone-200 pb-3 text-2xl font-normal text-stone-800 sm:text-3xl"
+            className="mb-12 border-b border-brand-muted/50 pb-3 text-2xl font-normal text-brand-dark sm:text-3xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
             Часть Прованс
@@ -191,13 +191,13 @@ export default function GuestHousesPage() {
           <div className="grid gap-8 lg:grid-cols-12 lg:gap-12 lg:items-start">
             <div className="lg:col-span-4">
               <p
-                className="mb-4 text-stone-500 italic"
+                className="mb-4 text-brand-dark/80 italic"
                 style={{ fontFamily: "var(--font-raleway)" }}
               >
                 Уединённая часть дома с камерной атмосферой.
               </p>
               <ul
-                className="list-inside list-disc space-y-1.5 text-stone-700 leading-relaxed"
+                className="list-inside list-disc space-y-1.5 text-brand-dark leading-relaxed"
                 style={{ fontFamily: "var(--font-raleway)" }}
               >
                 <li>Две спальни и большой санузел с душем</li>

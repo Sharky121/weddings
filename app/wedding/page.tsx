@@ -35,7 +35,7 @@ export default function WeddingPage() {
     <>
       {/* Секция-заголовок */}
       <section
-        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-stone-900 px-4 sm:px-6"
+        className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
         <ParallaxBackground backgroundImage="/wedding_bg.jpg" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
@@ -103,17 +103,17 @@ export default function WeddingPage() {
       </section>
 
       {/* Описание */}
-      <section id="content" className="border-t border-stone-200 bg-stone-50/80 py-14 sm:py-16 lg:py-24">
+      <section id="content" className="border-t border-brand-muted/50 bg-brand-light/80 py-14 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <blockquote className="relative text-center">
             <span
-              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-stone-200 sm:text-8xl"
+              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
               aria-hidden
             >
               {"\u201C"}
             </span>
             <p
-              className="relative pt-8 text-lg leading-loose text-stone-600 sm:pt-10 sm:text-xl lg:text-2xl"
+              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
               style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
             >
               Вся территория Усадьбы сдается эксклюзивно для одной пары и их гостей,
@@ -125,10 +125,10 @@ export default function WeddingPage() {
       </section>
 
       {/* Свадебные локации */}
-      <section className="border-t border-stone-200 bg-white py-12 sm:py-16 lg:py-20">
+      <section className="border-t border-brand-muted/50 bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="mb-10 border-b border-stone-200 pb-3 text-2xl font-normal text-stone-800 sm:text-3xl"
+            className="mb-10 border-b border-brand-muted/50 pb-3 text-2xl font-normal text-brand-dark sm:text-3xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
             Свадебные локации
@@ -137,14 +137,15 @@ export default function WeddingPage() {
             className="mb-12 grid list-none grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3"
             style={{ fontFamily: "var(--font-raleway)" }}
           >
-            {locations.map((name, i) => (
+            {locations.map((name) => (
               <li
                 key={name}
-                className="flex items-center gap-3 text-stone-700"
+                className="flex items-center gap-3 text-brand-dark"
               >
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-stone-100 text-sm font-medium text-stone-600">
-                  {i + 1}
-                </span>
+                <span
+                  className="h-2 w-2 shrink-0 rotate-45 bg-brand-muted"
+                  aria-hidden
+                />
                 <span>{name}</span>
               </li>
             ))}
@@ -152,28 +153,29 @@ export default function WeddingPage() {
           <ImageLightboxGrid
             images={weddingLocationImages}
             labels={locations.map((name) => `Свадебная локация — ${name}`)}
+            imageClassName="h-72 w-full object-cover sm:h-80 lg:h-96"
           />
         </div>
       </section>
 
       {/* Отдаленность и территория */}
-      <section className="border-t border-stone-200 bg-stone-50/80 py-14 sm:py-16 lg:py-24">
+      <section className="border-t border-brand-muted/50 bg-brand-light/80 py-14 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="mb-8 text-center text-xl font-normal tracking-wide text-stone-800 sm:text-2xl lg:text-3xl"
+            className="mb-8 text-center text-xl font-normal tracking-wide text-brand-dark sm:text-2xl lg:text-3xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
             Отдаленность от населенных пунктов
           </h2>
           <blockquote className="relative text-center">
             <span
-              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-stone-200 sm:text-8xl"
+              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
               aria-hidden
             >
               {"\u201C"}
             </span>
             <p
-              className="relative pt-8 text-lg leading-loose text-stone-600 sm:pt-10 sm:text-xl lg:text-2xl"
+              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
               style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
             >
               Усадьба окружена лесом и граничит с Иванковским озером, а ее большая
@@ -181,7 +183,7 @@ export default function WeddingPage() {
               не будет нарушено посторонним вмешательством.
             </p>
             <p
-              className="mt-6 text-lg leading-loose text-stone-600 sm:text-xl lg:text-2xl"
+              className="mt-6 text-lg leading-loose text-brand-dark sm:text-xl lg:text-2xl"
               style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
             >
               Территория Усадьбы Ушмор охраняется круглосуточно.

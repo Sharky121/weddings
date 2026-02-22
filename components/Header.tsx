@@ -31,8 +31,8 @@ export default function Header() {
   }, []);
 
   const linkClass = (isActive: boolean) =>
-    `whitespace-nowrap font-medium transition-colors hover:text-amber-700 ${
-      isActive ? "font-semibold text-amber-800" : "text-amber-900"
+    `whitespace-nowrap font-medium transition-colors hover:text-brand-accent ${
+      isActive ? "font-semibold text-brand-accent" : "text-brand-dark"
     }`;
 
   const linkRowClass =
@@ -41,7 +41,7 @@ export default function Header() {
   const navStyle = { fontFamily: "var(--font-kurale)" };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-stone-200/60 bg-white">
+    <header className="sticky top-0 z-50 border-b border-brand-muted/40 bg-white">
       <div className="relative mx-auto max-w-7xl">
         {/* Расширенный хедер (логотип + меню в 2 колонки) */}
         <div
@@ -71,7 +71,7 @@ export default function Header() {
               </div>
             </nav>
           </div>
-          <Link href="/" className="flex shrink-0 text-stone-800 hover:text-stone-600">
+          <Link href="/" className="flex shrink-0 text-brand-dark hover:text-brand-dark/80">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo_ushmor_white.png"
