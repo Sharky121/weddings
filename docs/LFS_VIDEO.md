@@ -17,6 +17,7 @@
    ```bash
    git lfs install
    ```
+   Если `git-lfs` не установлен в системе, но в проекте есть папка `.git-lfs-bin`, используйте для пуша: `npm run push` (или `sh scripts/push-with-lfs.sh origin main`).
 
 3. Отслеживание `*.mp4` уже задано в `.gitattributes`. Добавьте файлы и закоммитьте:
    ```bash
