@@ -2,8 +2,6 @@ import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { VideoHoverCard } from "@/components/VideoHoverCard";
 import { VIDEO_CEREMONY_URL } from "@/lib/video-urls";
 
-const RUTUBE_EMBED_SRC = "https://rutube.ru/play/embed/ae266c59890921847954a254eb3c8ce1";
-
 export const metadata = {
   title: "Венчание",
   description:
@@ -81,7 +79,7 @@ export default function WeddingCeremonyPage() {
         </a>
       </section>
 
-      {/* Секция с видео — по клику открывается окно с embedded Rutube */}
+      {/* Секция с видео */}
       <section id="content" className="border-t border-brand-muted/50 bg-brand-light/85 py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2
@@ -98,7 +96,7 @@ export default function WeddingCeremonyPage() {
           </p>
           <VideoHoverCard
             poster="/wedding_bg.jpg"
-            embedSrc={VIDEO_CEREMONY_URL}
+            videoSrc={VIDEO_CEREMONY_URL}
             title="Венчание в храме"
           />
         </div>
