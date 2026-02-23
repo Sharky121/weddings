@@ -41,7 +41,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# large media (exceeds GitHub 100MB; host elsewhere
+# large media (exceeds GitHub 100MB; host elsewhere)
+/public/video.mp4
 
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.

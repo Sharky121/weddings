@@ -2,6 +2,7 @@ import { ImageLightboxGrid } from "@/components/ImageLightbox";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { MapImageLightbox } from "@/components/MapImageLightbox";
 import { VideoHoverCard } from "@/components/VideoHoverCard";
+import { VIDEO_ABOUT_URL } from "@/lib/video-urls";
 
 export const metadata = {
   title: "Об Усадьбе",
@@ -111,7 +112,7 @@ export default function AboutPage() {
           </p>
           <VideoHoverCard
             poster="/welcome_bg.jpg"
-            videoSrc="/wedding_video.mp4"
+            videoSrc={VIDEO_ABOUT_URL}
             title="Об усадьбе"
           />
         </div>

@@ -1,5 +1,6 @@
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { VideoHoverCard } from "@/components/VideoHoverCard";
+import { VIDEO_CEREMONY_URL } from "@/lib/video-urls";
 
 const RUTUBE_EMBED_SRC = "https://rutube.ru/play/embed/ae266c59890921847954a254eb3c8ce1";
 
@@ -97,7 +98,7 @@ export default function WeddingCeremonyPage() {
           </p>
           <VideoHoverCard
             poster="/wedding_bg.jpg"
-            embedSrc={RUTUBE_EMBED_SRC}
+            embedSrc={VIDEO_CEREMONY_URL}
             title="Венчание в храме"
           />
         </div>
