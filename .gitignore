@@ -37,6 +37,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# локальный бинарник Git LFS (опционально)
+.git-lfs-bin
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

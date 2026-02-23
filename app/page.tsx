@@ -149,7 +149,7 @@ export default function HomePage() {
           </p>
           <VideoHoverCard
             poster="/welcome_bg.jpg"
-            videoSrc="/wedding_video.mp4"
+            videoSrc="/wedding.mp4"
             title="Усадьба Ушмор"
           />
         </div>

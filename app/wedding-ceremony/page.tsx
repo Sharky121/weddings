@@ -1,6 +1,5 @@
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { VideoHoverCard } from "@/components/VideoHoverCard";
-import { VIDEO_CEREMONY_URL } from "@/lib/video-urls";
 
 export const metadata = {
   title: "Венчание",
@@ -96,7 +95,7 @@ export default function WeddingCeremonyPage() {
           </p>
           <VideoHoverCard
             poster="/wedding_bg.jpg"
-            videoSrc={VIDEO_CEREMONY_URL}
+            videoSrc="/wedding-ceremony.mp4"
             title="Венчание в храме"
           />
         </div>

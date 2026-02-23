@@ -41,11 +41,12 @@ export function VideoHoverCard({
     };
   }, [open, close]);
 
-  // Автозапуск видео при открытии лайтбокса (только для <video>)
+  // Автозапуск видео при открытии лайтбокса (только для <video>). muted нужен для автовоспроизведения в браузерах.
   useEffect(() => {
     if (!open || useEmbed) return;
     const video = videoRef.current;
     if (!video) return;
+    video.muted = true;
     const play = () => video.play().catch(() => {});
     if (video.readyState >= 2) play();
     else video.addEventListener("loadeddata", play, { once: true });
@@ -142,6 +143,7 @@ export function VideoHoverCard({
                 ref={videoRef}
                 src={videoSrc}
                 autoPlay
+                muted
                 controls
                 playsInline
                 preload="auto"
