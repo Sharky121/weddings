@@ -1,13 +1,8 @@
 import type { NextConfig } from "next";
 
-// На домене .рф запросы к /_next/static с того же хоста дают таймаут. Грузим статику с *.vercel.app, где всё отвечает.
-const vercelOrigin =
-  typeof process.env.VERCEL_URL === "string"
-    ? `https://${process.env.VERCEL_URL}`
-    : "";
-
+// Статика всегда грузится с этого хоста (на .рф запросы к /_next/static дают таймаут).
 const nextConfig: NextConfig = {
-  assetPrefix: vercelOrigin,
+  assetPrefix: "https://weddings-git-main-sharky121s-projects.vercel.app",
   images: { unoptimized: true },
 };
 
