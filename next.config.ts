@@ -1,9 +1,13 @@
 import type { NextConfig } from "next";
 
-// Явно запрещаем абсолютные URL для ресурсов: только относительные пути от текущего хоста.
-// Иначе при сборке на Vercel в HTML/CSS могут попасть ссылки на домен (в т.ч. punycode), который даёт таймауты.
+// На домене .рф запросы к /_next/static с того же хоста дают таймаут. Грузим статику с *.vercel.app, где всё отвечает.
+const vercelOrigin =
+  typeof process.env.VERCEL_URL === "string"
+    ? `https://${process.env.VERCEL_URL}`
+    : "";
+
 const nextConfig: NextConfig = {
-  assetPrefix: "",
+  assetPrefix: vercelOrigin,
   images: { unoptimized: true },
 };
 
