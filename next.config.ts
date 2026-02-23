@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
-// При задании NEXT_PUBLIC_SITE_URL стили и скрипты грузятся с этого домена (важно для .рф и кастомных доменов).
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "";
+// Относительные пути для всех ресурсов (_next/static, скрипты, стили) — грузятся с того же домена, что и страница (меньше таймаутов на .рф).
 const nextConfig: NextConfig = {
-  ...(siteUrl && { assetPrefix: siteUrl }),
+  images: { unoptimized: true },
 };
 
 export default nextConfig;
