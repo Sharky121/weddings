@@ -1,5 +1,6 @@
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { VideoHoverCard } from "@/components/VideoHoverCard";
+import { assetUrl } from "@/lib/site";
 
 export const metadata = {
   title: "Мероприятия",
@@ -14,7 +15,7 @@ export default function EventsPage() {
       <section
         className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
-        <ParallaxBackground backgroundImage="/welcome_bg.jpg" />
+        <ParallaxBackground backgroundImage={assetUrl("/welcome_bg.jpg")} />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
@@ -94,8 +95,8 @@ export default function EventsPage() {
             Как проходят мероприятия в усадьбе
           </p>
           <VideoHoverCard
-            poster="/welcome_bg.jpg"
-            videoSrc="/wedding_video.mp4"
+            poster={assetUrl("/welcome_bg.jpg")}
+            videoSrc={assetUrl("/wedding_video.mp4")}
             title="Мероприятия в усадьбе"
           />
         </div>

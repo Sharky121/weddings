@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ImageSliderWithThumbs } from "@/components/ImageSliderWithThumbs";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
+import { assetUrl } from "@/lib/site";
 
 export const metadata = {
   title: "Кейтеринг",
@@ -31,7 +32,7 @@ export default function CateringPage() {
       <section
         className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
-        <ParallaxBackground backgroundImage="/catering_bg.jpg" />
+        <ParallaxBackground backgroundImage={assetUrl("/catering_bg.jpg")} />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
@@ -130,7 +131,7 @@ export default function CateringPage() {
             <div className="flex flex-col rounded-2xl border border-brand-muted/50 bg-white shadow-sm">
               <div className="flex min-h-full flex-1 flex-col items-center justify-center px-8 py-10 sm:px-12 sm:py-12">
                 <Image
-                  src="/catering_logo.svg"
+                  src={assetUrl("/catering_logo.svg")}
                   alt="Solo Catering Service"
                   width={380}
                   height={160}
@@ -200,7 +201,7 @@ export default function CateringPage() {
       <section className="border-t border-brand-muted/50 bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <ImageSliderWithThumbs
-            images={cateringBanquetImages}
+            images={cateringBanquetImages.map(assetUrl)}
             labels={cateringBanquetImages.map((_, i) => `Банкет и Гала-Ужин — фото ${i + 1}`)}
             mainImageClassName="aspect-video w-full object-cover"
           />

@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { assetUrl } from "@/lib/site";
 import { ImageLightbox } from "./ImageLightbox";
 
-const MAP_SLIDE = { src: "/map.png", alt: "План усадьбы Ушмор" };
+const MAP_SLIDE = { src: assetUrl("/map.png"), alt: "План усадьбы Ушмор" };
 
 export function MapImageLightbox() {
   return (
@@ -15,7 +16,7 @@ export function MapImageLightbox() {
           className="mb-16 w-full overflow-hidden text-left focus:outline-none focus:ring-2 focus:ring-brand-muted focus:ring-offset-2"
         >
           <Image
-            src="/map.png"
+            src={assetUrl("/map.png")}
             alt="План усадьбы Ушмор"
             width={1200}
             height={800}

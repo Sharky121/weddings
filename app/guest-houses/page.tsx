@@ -1,5 +1,6 @@
 import { GuestHousePhotoGrid } from "@/components/GuestHousePhotoGrid";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
+import { assetUrl } from "@/lib/site";
 
 export const metadata = {
   title: "Гостевые дома",
@@ -32,7 +33,7 @@ export default function GuestHousesPage() {
       <section
         className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
-        <ParallaxBackground backgroundImage="/guest_home_bg.jpg" />
+        <ParallaxBackground backgroundImage={assetUrl("/guest_home_bg.jpg")} />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
@@ -147,7 +148,7 @@ export default function GuestHousesPage() {
               </p>
             </div>
             <GuestHousePhotoGrid
-              images={englishStage1Images}
+              images={englishStage1Images.map(assetUrl)}
               labels={englishStage1Images.map((_, i) => `Первый этаж — фото ${i + 1}`)}
             />
           </div>
@@ -172,7 +173,7 @@ export default function GuestHousesPage() {
               </ul>
             </div>
             <GuestHousePhotoGrid
-              images={englishStage2Images}
+              images={englishStage2Images.map(assetUrl)}
               labels={englishStage2Images.map((_, i) => `Второй этаж — фото ${i + 1}`)}
             />
           </div>
@@ -205,7 +206,7 @@ export default function GuestHousesPage() {
               </ul>
             </div>
             <GuestHousePhotoGrid
-              images={provanceImages}
+              images={provanceImages.map(assetUrl)}
               labels={provanceImages.map((_, i) => `Прованс — фото ${i + 1}`)}
             />
           </div>

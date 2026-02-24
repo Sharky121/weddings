@@ -1,5 +1,6 @@
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { PortfolioBlock } from "@/components/PortfolioBlock";
+import { assetUrl } from "@/lib/site";
 
 export const metadata = {
   title: "Портфолио",
@@ -29,7 +30,7 @@ export default function PortfolioPage() {
       <section
         className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
-        <ParallaxBackground backgroundImage="/welcome_bg.jpg" />
+        <ParallaxBackground backgroundImage={assetUrl("/welcome_bg.jpg")} />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
@@ -103,7 +104,7 @@ export default function PortfolioPage() {
               <PortfolioBlock
                 key={item.title}
                 title={item.title}
-                images={item.images}
+                images={item.images.map(assetUrl)}
               />
             ))}
           </div>

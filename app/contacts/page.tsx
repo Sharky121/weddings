@@ -1,6 +1,7 @@
 import { BuildRouteButton } from "@/components/BuildRouteButton";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { YandexMap } from "@/components/YandexMap";
+import { assetUrl } from "@/lib/site";
 
 export const metadata = {
   title: "Контакты",
@@ -16,7 +17,7 @@ export default function ContactsPage() {
       <section
         className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
-        <ParallaxBackground backgroundImage="/welcome_bg.jpg" />
+        <ParallaxBackground backgroundImage={assetUrl("/welcome_bg.jpg")} />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
