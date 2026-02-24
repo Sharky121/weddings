@@ -1,6 +1,5 @@
 import { ImageLightboxGrid } from "@/components/ImageLightbox";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
-import { assetUrl } from "@/lib/site";
 
 export const metadata = {
   title: "Фотосессии",
@@ -20,7 +19,7 @@ export default function PhotoSessionsPage() {
       <section
         className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
-        <ParallaxBackground backgroundImage={assetUrl("/welcome_bg.jpg")} />
+        <ParallaxBackground backgroundImage="/welcome_bg.jpg" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
@@ -121,7 +120,7 @@ export default function PhotoSessionsPage() {
       <section className="border-t border-brand-muted/50 bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <ImageLightboxGrid
-            images={fotosessionImages.map(assetUrl)}
+            images={fotosessionImages}
             labels={fotosessionImages.map((_, i) => `Фотосессия — фото ${i + 1}`)}
             gridClassName="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3"
             imageClassName="h-72 w-full object-cover sm:h-80 lg:h-96"

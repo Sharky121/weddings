@@ -94,8 +94,8 @@ export default function WeddingCeremonyPage() {
             Венчание в храме — атмосфера и таинство
           </p>
           <VideoHoverCard
-            poster={assetUrl("/wedding-ceremony_bg.jpg")}
-            videoSrc={assetUrl("/wedding-ceremony.mp4")}
+            poster="/wedding-ceremony_bg.jpg"
+            videoSrc="/wedding-ceremony.mp4"
             title="Венчание в храме"
           />
         </div>

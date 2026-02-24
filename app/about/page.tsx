@@ -2,7 +2,6 @@ import { ImageLightboxGrid } from "@/components/ImageLightbox";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { MapImageLightbox } from "@/components/MapImageLightbox";
 import { VideoHoverCard } from "@/components/VideoHoverCard";
-import { assetUrl } from "@/lib/site";
 
 export const metadata = {
   title: "Об Усадьбе",
@@ -27,7 +26,7 @@ export default function AboutPage() {
         className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
         <div className="hero-bg-soft-in absolute inset-0">
-          <ParallaxBackground backgroundImage={assetUrl("/welcome_bg.jpg")} />
+          <ParallaxBackground backgroundImage="/welcome_bg.jpg" />
           <div className="absolute inset-0 bg-black/40" aria-hidden />
         </div>
         <div className="relative z-10 max-w-2xl text-center">
@@ -111,8 +110,8 @@ export default function AboutPage() {
             Усадьба в кадре
           </p>
           <VideoHoverCard
-            poster={assetUrl("/welcome_bg.jpg")}
-            videoSrc={assetUrl("/wedding-about.mp4")}
+            poster="/welcome_bg.jpg"
+            videoSrc="/wedding-about.mp4"
             title="Об усадьбе"
           />
         </div>
@@ -141,7 +140,7 @@ export default function AboutPage() {
             Фотографии Усадьбы
           </h2>
           <ImageLightboxGrid
-            images={usadbaImages.map(assetUrl)}
+            images={usadbaImages}
             labels={usadbaImages.map((_, i) => `Усадьба Ушмор — фото ${i + 1}`)}
             gridClassName="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
             imageClassName="h-72 w-full object-cover sm:h-80 lg:h-96"

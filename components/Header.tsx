@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSwipeable } from "react-swipeable";
-import { assetUrl } from "@/lib/site";
 
 const navItems = [
   { label: "Об Усадьбе", href: "/about" },
@@ -70,7 +69,7 @@ export default function Header() {
           <Link href="/" className="flex shrink-0 text-brand-dark hover:text-brand-dark/80">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={assetUrl("/logo_ushmor_white.png")}
+              src="/logo_ushmor_white.png"
               alt="Усадьба Ушмор"
               className="h-16 w-auto invert sm:h-20"
             />
@@ -211,7 +210,7 @@ export default function Header() {
           <Link href="/" className="flex shrink-0 text-brand-dark hover:text-brand-dark/80">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={assetUrl("/logo_ushmor_white.png")}
+              src="/logo_ushmor_white.png"
               alt="Усадьба Ушмор"
               className="h-[140px] w-auto invert"
             />

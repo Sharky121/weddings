@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { VideoHoverCard } from "@/components/VideoHoverCard";
-import { assetUrl } from "@/lib/site";
 
 export const metadata = {
   title: "Премиальные свадьбы в сердце Мещеры",
@@ -18,7 +17,7 @@ export default function HomePage() {
         className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
         <ParallaxBackground
-          backgroundImage={assetUrl("/welcome_bg.jpg")}
+          backgroundImage="/welcome_bg.jpg"
           backgroundPosition="center 25%"
         />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
@@ -38,14 +37,14 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8">
             <Image
-              src={assetUrl("/top_awards_logo.svg")}
+              src="/top_awards_logo.svg"
               alt="100 лучших площадок"
               width={180}
               height={90}
               className="h-12 w-auto object-contain drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)] sm:h-14 md:h-16"
             />
             <Image
-              src={assetUrl("/wa_logo.png")}
+              src="/wa_logo.png"
               alt="Wedding Awards"
               width={180}
               height={90}
@@ -149,8 +148,8 @@ export default function HomePage() {
             Усадьба в кадре
           </p>
           <VideoHoverCard
-            poster={assetUrl("/welcome_bg.jpg")}
-            videoSrc={assetUrl("/wedding.mp4")}
+            poster="/welcome_bg.jpg"
+            videoSrc="/wedding.mp4"
             title="Усадьба Ушмор"
           />
         </div>

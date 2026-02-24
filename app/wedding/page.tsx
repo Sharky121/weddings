@@ -1,6 +1,5 @@
 import { ImageLightboxGrid } from "@/components/ImageLightbox";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
-import { assetUrl } from "@/lib/site";
 
 export const metadata = {
   title: "Свадьба в Усадьбе",
@@ -38,7 +37,7 @@ export default function WeddingPage() {
       <section
         className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
-        <ParallaxBackground backgroundImage={assetUrl("/wedding_bg.jpg")} />
+        <ParallaxBackground backgroundImage="/wedding_bg.jpg" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
@@ -152,7 +151,7 @@ export default function WeddingPage() {
             ))}
           </ul>
           <ImageLightboxGrid
-            images={weddingLocationImages.map(assetUrl)}
+            images={weddingLocationImages}
             labels={locations.map((name) => `Свадебная локация — ${name}`)}
             imageClassName="h-72 w-full object-cover sm:h-80 lg:h-96"
           />

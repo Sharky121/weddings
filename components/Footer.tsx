@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { assetUrl } from "@/lib/site";
 
 const navItems = [
   { label: "Об Усадьбе", href: "/about" },
@@ -30,7 +29,7 @@ export default function Footer() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={assetUrl("/logo_ushmor_white.png")}
+                src="/logo_ushmor_white.png"
                 alt="Усадьба Ушмор"
                 className="h-24 w-auto invert sm:h-28 lg:h-20 xl:h-24"
               />
