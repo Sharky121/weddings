@@ -1,6 +1,5 @@
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { VideoHoverCard } from "@/components/VideoHoverCard";
-import { assetUrl } from "@/lib/site";
 
 export const metadata = {
   title: "Венчание",
@@ -15,7 +14,7 @@ export default function WeddingCeremonyPage() {
       <section
         className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
-        <ParallaxBackground backgroundImage={assetUrl("/wedding-ceremony_bg.jpg")} />
+        <ParallaxBackground backgroundImage="/wedding-ceremony_bg.jpg" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
