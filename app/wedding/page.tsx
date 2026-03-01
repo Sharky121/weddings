@@ -20,7 +20,6 @@ const locations = [
 ];
 
 const weddingLocationImages = [
-  "/wedding_1.jpg",
   "/wedding_2.jpg",
   "/wedding_3.jpg",
   "/wedding_4.jpg",
@@ -118,7 +117,7 @@ export default function WeddingPage() {
             >
               Вся территория Усадьбы сдается эксклюзивно для одной пары и их гостей,
               что позволяет выбрать любую локацию для проведения фото-видео сессии,
-              церемонии бракосочетания, фуршета, банкета.
+              церемонии бракосочетания, фуршета, банкета. Отдаленность от населенных пунктов
             </p>
           </blockquote>
         </div>
@@ -161,12 +160,6 @@ export default function WeddingPage() {
       {/* Отдаленность и территория */}
       <section className="border-t border-brand-muted/50 bg-brand-light/80 py-14 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2
-            className="mb-8 text-center text-xl font-normal tracking-wide text-brand-dark sm:text-2xl lg:text-3xl"
-            style={{ fontFamily: "var(--font-forum)" }}
-          >
-            Отдаленность от населенных пунктов
-          </h2>
           <blockquote className="relative text-center">
             <span
               className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
@@ -180,13 +173,7 @@ export default function WeddingPage() {
             >
               Усадьба окружена лесом и граничит с Иванковским озером, а ее большая
               территория позволяет воплотить в жизнь все ваши желания, а торжество
-              не будет нарушено посторонним вмешательством.
-            </p>
-            <p
-              className="mt-6 text-lg leading-loose text-brand-dark sm:text-xl lg:text-2xl"
-              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
-            >
-              Территория Усадьбы Ушмор охраняется круглосуточно.
+              не будет нарушено посторонним вмешательством. Территория Усадьбы Ушмор охраняется круглосуточно.
             </p>
           </blockquote>
         </div>
