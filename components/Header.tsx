@@ -7,7 +7,7 @@ import { useSwipeable } from "react-swipeable";
 
 const navItems = [
   { label: "Об Усадьбе", href: "/about" },
-  { label: "Гостевые дома", href: "/guest-houses" },
+  { label: "Гостевой дом", href: "/guest-houses" },
   { label: "Свадьба в Усадьбе", href: "/wedding" },
   { label: "Венчание", href: "/wedding-ceremony" },
   { label: "Портфолио", href: "/portfolio" },

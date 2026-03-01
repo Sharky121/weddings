@@ -14,8 +14,8 @@ const englishStage1Images = [
 ];
 
 const englishStage2Images = [
-  "/english_guest_stage-2_1.jpg",
   "/english_guest_stage-2_2.jpg",
+  "/english_guest_stage-2_4.jpg",
   "/english_guest_stage-2_3.jpg",
 ];
 
@@ -32,23 +32,15 @@ export default function GuestHousesPage() {
       <section
         className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
-        <ParallaxBackground backgroundImage="/guest_home_bg.jpg" />
+        <ParallaxBackground backgroundImage="/guest_bg.jpg" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
-            className="mb-4 text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
+            className="text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
-            Гостевые дома Усадьбы Ушмор
+            Гостевой дом
           </h1>
-          <p
-            className="text-base leading-relaxed text-white/95 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-lg"
-            style={{ fontFamily: "var(--font-raleway)" }}
-          >
-            Гостевой Дом Усадьбы Ушмор спроектирован в готическом стиле, отделен
-            от основного пространства живой изгородью, что позволяет гостям с
-            комфортом отдыхать в уютном дворике.
-          </p>
         </div>
         <a
           href="#content"
@@ -100,8 +92,24 @@ export default function GuestHousesPage() {
       {/* Общий заголовок для обеих частей */}
       <section id="content" className="border-t border-brand-muted/50 bg-brand-light/80 py-14 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <blockquote className="relative text-center">
+            <span
+              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
+              aria-hidden
+            >
+              {"\u201C"}
+            </span>
+            <p
+              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
+              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
+            >
+              Гостевой Дом Усадьбы Ушмор спроектирован в готическом стиле, отделен
+              от основного пространства живой изгородью, что позволяет гостям с
+              комфортом отдыхать в уютном дворике.
+            </p>
+          </blockquote>
           <p
-            className="text-center text-xl text-brand-dark tracking-wide sm:text-2xl lg:text-3xl"
+            className="mt-8 text-center text-xl text-brand-dark tracking-wide sm:text-2xl lg:text-3xl"
             style={{ fontFamily: "var(--font-forum)", lineHeight: 1.6 }}
           >
             Гостевой дом состоит из двух изолированных частей
@@ -161,13 +169,13 @@ export default function GuestHousesPage() {
                 className="mb-4 text-brand-dark/80 italic"
                 style={{ fontFamily: "var(--font-raleway)" }}
               >
-                Просторные номера и общие зоны.
+                Просторные апартаменты и общие зоны.
               </p>
               <ul
                 className="list-inside list-disc space-y-1.5 text-brand-dark leading-relaxed"
                 style={{ fontFamily: "var(--font-raleway)" }}
               >
-                <li>Три двухкомнатных номера с отдельными ванными (душ) и балконами</li>
+                <li>Три двухкомнатных апартамента с отдельными ванными (душ) и балконами</li>
                 <li>Столовая и кухня — для общих трапез</li>
               </ul>
             </div>
@@ -201,7 +209,7 @@ export default function GuestHousesPage() {
                 style={{ fontFamily: "var(--font-raleway)" }}
               >
                 <li>Две спальни и большой санузел с душем</li>
-                <li>Гостиная и кабинет-библиотека</li>
+                <li>Гостина-кухня и кабинет-библиотека</li>
               </ul>
             </div>
             <GuestHousePhotoGrid
