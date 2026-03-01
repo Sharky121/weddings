@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ImageSliderWithThumbs } from "@/components/ImageSliderWithThumbs";
+import { ImageLightboxGrid } from "@/components/ImageLightbox";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 export const metadata = {
@@ -196,13 +196,16 @@ export default function CateringPage() {
         </div>
       </section>
 
-      {/* Фотографии банкета — слайдер с миниатюрами на странице */}
+      {/* Фотографии банкета */}
       <section className="border-t border-brand-muted/50 bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <ImageSliderWithThumbs
+          <ImageLightboxGrid
             images={cateringBanquetImages}
             labels={cateringBanquetImages.map((_, i) => `Банкет и Гала-Ужин — фото ${i + 1}`)}
-            mainImageClassName="aspect-video w-full object-cover"
+            gridClassName="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
+            imageClassName="h-56 w-full object-cover sm:h-64 lg:h-72"
+            imageWidth={600}
+            imageHeight={400}
           />
         </div>
       </section>
