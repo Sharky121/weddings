@@ -1,7 +1,6 @@
 import { ImageLightboxGrid } from "@/components/ImageLightbox";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { MapImageLightbox } from "@/components/MapImageLightbox";
-import { VideoHoverCard } from "@/components/VideoHoverCard";
 
 export const metadata = {
   title: "Об Усадьбе",
@@ -26,26 +25,16 @@ export default function AboutPage() {
         className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
         <div className="hero-bg-soft-in absolute inset-0">
-          <ParallaxBackground backgroundImage="/welcome_bg.jpg" />
+          <ParallaxBackground backgroundImage="/welcome_bg.png" />
           <div className="absolute inset-0 bg-black/40" aria-hidden />
         </div>
         <div className="relative z-10 max-w-2xl text-center">
           <h1
-            className="mb-6 text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
+            className="text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
             Об Усадьбе
           </h1>
-          <p
-            className="text-base leading-relaxed text-white/95 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-lg"
-            style={{ fontFamily: "var(--font-raleway)" }}
-          >
-            Усадьба Ушмор расположена в центре Национального Мещерского парка, на
-            границе Московской и Рязанской областей. Это прекрасный
-            архитектурно-парковый ансамбль в стиле дворянского классицизма
-            начала середины 19 века, 10 гектар охраняемой и огороженной
-            территории со всех сторон окруженной девственной природой.
-          </p>
         </div>
         <a
           href="#content"
@@ -94,7 +83,31 @@ export default function AboutPage() {
         </a>
       </section>
 
-      {/* 2. Секция с видео */}
+      {/* 2. Секция описание */}
+      <section className="border-t border-brand-muted/50 bg-brand-light/85 py-14 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <blockquote className="relative text-center">
+            <span
+              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
+              aria-hidden
+            >
+              {"\u201C"}
+            </span>
+            <p
+              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
+              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
+            >
+              Усадьба Ушмор расположена в центре Национального Мещерского парка, на
+              границе Московской и Рязанской областей. Это прекрасный
+              архитектурно-парковый ансамбль в стиле дворянского классицизма
+              начала середины 19 века, 10 гектар охраняемой и огороженной
+              территории со всех сторон окруженной девственной природой.
+            </p>
+          </blockquote>
+        </div>
+      </section>
+
+      {/* 3. Секция с видео */}
       <section id="content" className="border-t border-brand-muted/50 bg-brand-light/85 py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2
@@ -109,29 +122,34 @@ export default function AboutPage() {
           >
             Усадьба в кадре
           </p>
-          <VideoHoverCard
-            poster="/welcome_bg.jpg"
-            videoSrc="/wedding-about.mp4"
-            title="Об усадьбе"
-          />
+          <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
+            <video
+              className="h-full w-full object-cover"
+              src="/wedding-about.mp4"
+              poster="/welcome_bg.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              preload="auto"
+            >
+              Ваш браузер не поддерживает воспроизведение видео.
+            </video>
+          </div>
         </div>
       </section>
 
-      {/* 3. План усадьбы + 6 фотографий */}
+      {/* 4. План усадьбы + 6 фотографий */}
       <section className="border-t border-brand-muted/50 bg-brand-light/85 py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="mb-2 text-center text-2xl font-normal tracking-wide text-brand-dark sm:text-3xl"
+            className="mb-8 text-center text-2xl font-normal tracking-wide text-brand-dark sm:text-3xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
-            План Усадьбы
+            План территории Усадьбы
           </h2>
-          <p
-            className="mb-8 text-center text-brand-dark"
-            style={{ fontFamily: "var(--font-raleway)" }}
-          >
-            Территория и расположение объектов
-          </p>
+
           <MapImageLightbox />
           <h2
             className="mb-8 text-center text-2xl font-normal tracking-wide text-brand-dark sm:text-3xl"
