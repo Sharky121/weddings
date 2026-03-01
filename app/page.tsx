@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
-import { VideoHoverCard } from "@/components/VideoHoverCard";
 
 export const metadata = {
   title: "Премиальные свадьбы в сердце Мещеры",
@@ -99,38 +98,6 @@ export default function HomePage() {
         </a>
       </section>
 
-      {/* Блок «Усадьба для свадьбы» — цитата */}
-      <section
-        id="content"
-        className="border-t border-brand-muted/50 bg-brand-light/80 py-14 sm:py-16 lg:py-24"
-      >
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <blockquote className="relative text-center">
-            <span
-              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
-              aria-hidden
-            >
-              {"\u201C"}
-            </span>
-            <p
-              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
-              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
-            >
-              Усадьба Ушмор — уникальное место для проведения свадьбы в
-              Подмосковье. Наша усадьба — это не просто красивый архитектурный
-              комплекс: старинный парк и сад, беседки и аллеи, гостевые дома и
-              изысканная природа Мещеры.
-            </p>
-            <p
-              className="mt-6 text-lg leading-loose text-brand-dark sm:text-xl lg:text-2xl"
-              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
-            >
-              Место, в котором мы принимаем гостей, проводим свадьбы и торжества
-              и каждый день отдаём своё сердце и душу.
-            </p>
-          </blockquote>
-        </div>
-      </section>
 
       {/* Секция с видео */}
       <section className="border-t border-brand-muted/50 bg-brand-light/85 py-12 sm:py-16 lg:py-20">
@@ -147,11 +114,21 @@ export default function HomePage() {
           >
             Усадьба в кадре
           </p>
-          <VideoHoverCard
-            poster="/welcome_bg.jpg"
-            videoSrc="/wedding.mp4"
-            title="Усадьба Ушмор"
-          />
+          <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
+            <video
+              className="h-full w-full object-cover"
+              src="/wedding.mp4"
+              poster="/welcome_bg.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              preload="auto"
+            >
+              Ваш браузер не поддерживает воспроизведение видео.
+            </video>
+          </div>
         </div>
       </section>
     </>
