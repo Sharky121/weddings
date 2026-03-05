@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ImageLightboxGrid } from "@/components/ImageLightbox";
+import { PhotoSessionGallery } from "@/components/PhotoSessionGallery";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 export const metadata = {
@@ -35,7 +35,7 @@ export default function CateringPage() {
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 flex max-w-2xl flex-col items-center text-center">
           <h1
-            className="mb-2 text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
+            className="mb-6 text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl sm:mb-8"
             style={{ fontFamily: "var(--font-forum)" }}
           >
             Кейтеринг
@@ -43,9 +43,9 @@ export default function CateringPage() {
           <Image
             src="/catering_logo.svg"
             alt="Solo Catering Service"
-            width={380}
-            height={160}
-            className="h-auto w-full max-w-[280px] object-contain drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)] [mix-blend-mode:lighten]"
+            width={180}
+            height={119}
+            className="h-auto w-full max-w-[140px] object-contain drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)] [mix-blend-mode:lighten] sm:max-w-[180px]"
           />
         </div>
         <a
@@ -173,16 +173,12 @@ export default function CateringPage() {
         </div>
       </section>
 
-      {/* Фотографии банкета */}
+      {/* Фотографии банкета — слайдер как на Фотосессиях */}
       <section className="border-t border-brand-muted/50 bg-white py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <ImageLightboxGrid
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <PhotoSessionGallery
             images={cateringBanquetImages}
             labels={cateringBanquetImages.map((_, i) => `Банкет и Гала-Ужин — фото ${i + 1}`)}
-            gridClassName="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
-            imageClassName="h-56 w-full object-cover sm:h-64 lg:h-72"
-            imageWidth={600}
-            imageHeight={400}
           />
         </div>
       </section>
