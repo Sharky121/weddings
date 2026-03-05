@@ -106,21 +106,21 @@ export default function WeddingCeremonyPage() {
           >
             Венчание в храме — атмосфера и таинство
           </p>
-          <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
-            <video
-              className="h-full w-full object-cover"
-              src="/wedding-ceremony.mp4"
-              poster="/wedding-ceremony_bg.jpg"
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-              preload="auto"
-            >
-              Ваш браузер не поддерживает воспроизведение видео.
-            </video>
-          </div>
+        </div>
+        <div className="aspect-video w-full overflow-hidden">
+          <video
+            className="h-full w-full object-cover"
+            src="/wedding-ceremony.mp4"
+            poster="/wedding-ceremony_bg.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+            preload="auto"
+          >
+            Ваш браузер не поддерживает воспроизведение видео.
+          </video>
         </div>
       </section>
     </>

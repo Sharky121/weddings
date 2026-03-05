@@ -93,6 +93,8 @@ export default function EventsPage() {
           >
             Как проходят мероприятия в усадьбе
           </p>
+        </div>
+        <div className="w-full">
           <VideoHoverCard
             poster="/welcome_bg.jpg"
             videoSrc="/wedding_video.mp4"
