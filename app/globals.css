@@ -72,3 +72,50 @@ body {
   border-color: rgb(195 210 218);
   box-shadow: 0 0 0 2px rgb(252 250 248);
 }
+
+/* Галерея фотосессий (react-image-gallery): бренд и высота по картинке */
+.photo-session-gallery {
+  --ig-primary-color: rgb(140 132 132);
+  --ig-thumbnail-size: 88px;
+  --ig-thumbnail-size-small: 72px;
+}
+/* Основная фотка: размер по содержимому, без фиксированной подложки */
+.photo-session-gallery .image-gallery-slide .image-gallery-image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(85vh, 1200px);
+  object-fit: contain;
+}
+.photo-session-gallery .image-gallery-slide-wrapper {
+  background: transparent;
+}
+.photo-session-gallery .image-gallery-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Превью одного размера (квадрат) */
+.photo-session-gallery .image-gallery-thumbnail {
+  width: var(--ig-thumbnail-size);
+  height: var(--ig-thumbnail-size);
+}
+@media (max-width: 768px) {
+  .photo-session-gallery .image-gallery-thumbnail {
+    width: var(--ig-thumbnail-size-small);
+    height: var(--ig-thumbnail-size-small);
+  }
+}
+.photo-session-gallery .image-gallery-thumbnail .image-gallery-thumbnail-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.photo-session-gallery .image-gallery-thumbnail .image-gallery-thumbnail-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

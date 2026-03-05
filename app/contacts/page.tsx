@@ -215,10 +215,10 @@ export default function ContactsPage() {
                     Email
                   </p>
                   <a
-                    href="mailto:info@usadba-na-pre.ru"
+                    href="mailto:ushmor_manor@mail.ru"
                     className="mt-1 block text-brand-dark underline decoration-brand-muted underline-offset-2 hover:text-brand-dark"
                   >
-                    info@usadba-na-pre.ru
+                    ushmor_manor@mail.ru
                   </a>
                 </li>
                 <li>

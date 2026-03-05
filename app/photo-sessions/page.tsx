@@ -1,4 +1,4 @@
-import { ImageLightboxGrid } from "@/components/ImageLightbox";
+import { PhotoSessionGallery } from "@/components/PhotoSessionGallery";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 export const metadata = {
@@ -7,10 +7,18 @@ export const metadata = {
     "Фотосессии в усадьбе Ушмор — разнообразные локации: исторический антураж, природа и современные тренды. Рязанская область.",
 };
 
-const fotosessionImages = Array.from(
-  { length: 9 },
-  (_, i) => `/fotosession_${i + 1}.jpg`
-);
+const fotosessionImages = [
+  "/fotosession_1.jpg",
+  "/fotosession_2.jpg",
+  "/fotosession_3.jpg",
+  "/fotosession_4.jpg",
+  "/fotosession_6.jpg",
+  "/fotosession_7.jpg",
+  "/fotosession_8.jpg",
+  "/fotosession_9.jpg",
+  "/fotosession_5.png",
+  "/fotosession_6.png",
+];
 
 export default function PhotoSessionsPage() {
   return (
@@ -23,19 +31,11 @@ export default function PhotoSessionsPage() {
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
-            className="mb-6 text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
+            className="text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
             Фотосессии в Усадьбах
           </h1>
-          <p
-            className="text-base leading-relaxed text-white/95 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-lg"
-            style={{ fontFamily: "var(--font-raleway)" }}
-          >
-            В наших Усадьбах много разнообразных локаций для проведения ваших
-            фотосессий, которые легко сочетают в себе не только исторический
-            антураж и природную эстетику, но и современные тренды!
-          </p>
         </div>
         <a
           href="#content"
@@ -101,29 +101,30 @@ export default function PhotoSessionsPage() {
               className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
               style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
             >
-              Дворянская и Пушкинская эпохи, серебряный век, сказочный и
-              мифологический стиль, готика и декаданс! А еще этно, винтаж и
-              классика, фэшн и бьюти-портрет.
+              Соединившая в себе исторический антураж и природную эстетику Усадьба Ушмор — уникальная локация для проведения неповторимых фото и видео сессий.
             </p>
             <p
               className="relative mt-6 text-lg leading-loose text-brand-dark sm:text-xl lg:text-2xl"
               style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
             >
-              Наши Усадьбы подойдут под любую вашу самую изысканную и уникальную
-              задумку.
+              Пушкинская эпоха, Серебрянный век, Англия времен Шерлока Холмса, декаденс, готика, этно, винтаж, фэшн…
+            </p>
+            <p
+              className="relative mt-6 text-lg leading-loose text-brand-dark sm:text-xl lg:text-2xl"
+              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
+            >
+              Мы предоставим вам возможность воплотить ваш самый оригинальный замысел.
             </p>
           </blockquote>
         </div>
       </section>
 
-      {/* Фотографии фотосессий — плитка с сохранением пропорций */}
+      {/* Фотографии фотосессий — галерея с превью */}
       <section className="border-t border-brand-muted/50 bg-white py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <ImageLightboxGrid
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <PhotoSessionGallery
             images={fotosessionImages}
             labels={fotosessionImages.map((_, i) => `Фотосессия — фото ${i + 1}`)}
-            gridClassName="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3"
-            imageClassName="h-72 w-full object-cover sm:h-80 lg:h-96"
           />
         </div>
       </section>

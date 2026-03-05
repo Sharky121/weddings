@@ -16,10 +16,11 @@ function portfolioImages(n: number, count: number): string[] {
 }
 
 const portfolioItems = [
-  { title: "Екатерина и Сергей", images: portfolioImages(1, 8) },
-  { title: "Анна и Михаил", images: portfolioImages(2, 14) },
-  { title: "Мария и Андрей", images: portfolioImages(3, 15) },
-  { title: "Ольга и Игорь", images: portfolioImages(4, 8) },
+  { title: "Роман и Дарья", images: portfolioImages(1, 8) },
+  { title: "Илья и Алена", images: portfolioImages(2, 14) },
+  { title: "Денис и Алиса", images: portfolioImages(3, 15) },
+  { title: "Владислав и Виктория", images: portfolioImages(4, 8) },
+  { title: "Василий и Яна", images: portfolioImages(5, 5) },
 ];
 
 export default function PortfolioPage() {
