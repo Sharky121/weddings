@@ -6,7 +6,7 @@ const navItems = [
   { label: "Свадьба в Усадьбе", href: "/wedding" },
   { label: "Венчание", href: "/wedding-ceremony" },
   { label: "Портфолио", href: "/portfolio" },
-  { label: "Мероприятия", href: "/events" },
+  { label: "Зимний сад", href: "/winter-garden" },
   { label: "Кейтеринг", href: "/catering" },
   { label: "Фотосессии", href: "/photo-sessions" },
   { label: "Прайс-лист", href: "/price" },
@@ -29,7 +29,7 @@ export default function Footer() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo_brown.png"
+                src="/logo_brown.png?v=2"
                 alt="Усадьба Ушмор"
                 className="h-24 w-auto sm:h-28 lg:h-20 xl:h-24 [mix-blend-mode:multiply]"
               />

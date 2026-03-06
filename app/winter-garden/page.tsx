@@ -1,13 +1,12 @@
 import { ParallaxBackground } from "@/components/ParallaxBackground";
-import { VideoHoverCard } from "@/components/VideoHoverCard";
 
 export const metadata = {
-  title: "Мероприятия",
+  title: "Зимний сад",
   description:
-    "Камерные мероприятия в Усадьбе Ушмор — помощь в полной организации вашего события. Рязанская область, Мещера.",
+    "Зимний сад в Усадьбе Ушмор — уютное пространство для мероприятий и отдыха. Рязанская область, Мещера.",
 };
 
-export default function EventsPage() {
+export default function WinterGardenPage() {
   return (
     <>
       {/* Секция-заголовок: на весь первый экран */}
@@ -18,18 +17,11 @@ export default function EventsPage() {
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
-            className="mb-6 text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
+            className="text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
-            Мероприятия
+            Зимний сад
           </h1>
-          <p
-            className="text-base leading-relaxed text-white/95 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-lg"
-            style={{ fontFamily: "var(--font-raleway)" }}
-          >
-            Усадьба Ушмор проводит также камерные мероприятия. Также мы помогаем
-            в полной организации вашего события.
-          </p>
         </div>
         <a
           href="#content"
@@ -78,28 +70,32 @@ export default function EventsPage() {
         </a>
       </section>
 
-      {/* Секция с видео */}
-      <section id="content" className="border-t border-brand-muted/50 bg-brand-light/85 py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2
-            className="mb-2 text-center text-2xl font-normal tracking-wide text-brand-dark sm:text-3xl"
-            style={{ fontFamily: "var(--font-forum)" }}
-          >
-            Видео
-          </h2>
-          <p
-            className="mb-8 text-center text-brand-dark"
-            style={{ fontFamily: "var(--font-raleway)" }}
-          >
-            Как проходят мероприятия в усадьбе
-          </p>
-        </div>
-        <div className="w-full">
-          <VideoHoverCard
-            poster="/welcome_bg.jpg"
-            videoSrc="/wedding_video.mp4"
-            title="Мероприятия в усадьбе"
-          />
+      {/* Секция с цитатой */}
+      <section id="content" className="border-t border-brand-muted/50 bg-brand-light/85 py-14 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <blockquote className="relative text-center">
+            <span
+              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
+              aria-hidden
+            >
+              {"\u201C"}
+            </span>
+            <p
+              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
+              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
+            >
+              Усадьба Ушмор предлагает Зимний сад Графского дома для проведения
+              камерных мероприятий (до 30 гостей).
+            </p>
+            <p
+              className="relative mt-6 text-lg leading-loose text-brand-dark sm:text-xl lg:text-2xl"
+              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
+            >
+              Ваш личный праздник, элитарный ужин-приём, корпоративное событие,
+              закрытая презентация, музыкальный вечер пройдут в аристократической
+              атмосфере дворянской усадьбы 19 века.
+            </p>
+          </blockquote>
         </div>
       </section>
     </>

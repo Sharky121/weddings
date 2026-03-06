@@ -11,9 +11,9 @@ export const metadata = {
 const usadbaImages = [
   "/usadba_1.jpg",
   "/usadba_2.jpg",
-  "/usadba_3.jpg",
-  "/usadba_4.jpg",
-  "/usadba_5.jpg",
+  "/usadba_rotunda.png",
+  "/usadba_glavny_dom.png",
+  "/usadba_parade.png",
   "/usadba_6.jpg",
 ];
 

@@ -11,7 +11,7 @@ const navItems = [
   { label: "Свадьба в Усадьбе", href: "/wedding" },
   { label: "Венчание", href: "/wedding-ceremony" },
   { label: "Портфолио", href: "/portfolio" },
-  { label: "Мероприятия", href: "/events" },
+  { label: "Зимний сад", href: "/winter-garden" },
   { label: "Кейтеринг", href: "/catering" },
   { label: "Фотосессии", href: "/photo-sessions" },
   { label: "Прайс-Лист", href: "/price" },
@@ -65,16 +65,23 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-brand-muted/40 bg-white">
       <div className="relative mx-auto max-w-7xl">
         {/* Мобильная/планшетная шапка: логотип + гамбургер (до lg) */}
-        <div className="flex items-center justify-between px-4 py-3 sm:px-6 lg:hidden">
-          <Link href="/" className="flex shrink-0 flex-col items-center text-brand-dark hover:text-brand-dark/80">
+        <div className="flex items-center justify-between gap-2 px-4 py-3 sm:px-6 lg:hidden">
+          <Link href="/" className="shrink-0" aria-label="Усадьба Ушмор — на главную">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo_brown.png"
-              alt="Усадьба Ушмор"
+              src="/logo_brown.png?v=2"
+              alt=""
               className="h-12 w-auto sm:h-14 [mix-blend-mode:multiply]"
             />
-            <span className="mt-0.5 text-xs font-semibold uppercase tracking-wider text-brand-dark sm:text-sm" style={navStyle}>
-              Премиальные свадьбы
+          </Link>
+          <Link
+            href="/"
+            className="flex min-w-0 flex-1 items-center justify-center px-2 text-center text-brand-dark hover:text-brand-dark/80"
+          >
+            <span className="text-xs font-semibold leading-tight text-brand-dark/90 sm:text-sm" style={navStyle}>
+              Премиальные свадьбы в сердце Мещеры.
+              <br />
+              Изысканность и роскошь на лоне природы.
             </span>
           </Link>
           <button
@@ -210,15 +217,17 @@ export default function Header() {
               </div>
             </nav>
           </div>
-          <Link href="/" className="flex shrink-0 flex-col items-center text-center text-brand-dark hover:text-brand-dark/80">
+          <Link href="/" className="flex max-w-[200px] shrink-0 flex-col items-center text-center text-brand-dark hover:text-brand-dark/80 sm:max-w-[240px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo_brown.png"
+              src="/logo_brown.png?v=2"
               alt="Усадьба Ушмор"
               className="h-16 w-auto sm:h-20 [mix-blend-mode:multiply]"
             />
-            <span className="mt-1 text-xs font-semibold uppercase tracking-wider text-brand-dark sm:text-sm" style={navStyle}>
-              Премиальные свадьбы
+            <span className="mt-2 block text-xs font-semibold leading-tight text-brand-dark/90 sm:text-sm" style={navStyle}>
+              Премиальные свадьбы в сердце Мещеры.
+              <br />
+              Изысканность и роскошь на лоне природы.
             </span>
           </Link>
           <div className="flex flex-1 basis-0 justify-start pl-2 sm:pl-3">
@@ -247,12 +256,20 @@ export default function Header() {
 
         {/* Десктоп: компактный хедер при скролле */}
         <div
-          className={`hidden items-center justify-center px-4 py-3 lg:flex lg:px-8 ${
+          className={`hidden items-center justify-between gap-6 px-4 py-3 lg:flex lg:px-8 ${
             !isScrolled ? "pointer-events-none absolute inset-0 opacity-0" : ""
           }`}
         >
+          <Link href="/" className="shrink-0" aria-label="Усадьба Ушмор — на главную">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo_brown.png?v=2"
+              alt=""
+              className="h-10 w-auto [mix-blend-mode:multiply]"
+            />
+          </Link>
           <nav
-            className="flex flex-nowrap items-center justify-center gap-x-5 py-1 text-xs uppercase tracking-wider"
+            className="flex flex-1 flex-nowrap items-center justify-center gap-x-5 py-1 text-xs uppercase tracking-wider"
             aria-label="Основное меню"
             style={navStyle}
           >
@@ -266,6 +283,7 @@ export default function Header() {
               </Link>
             ))}
           </nav>
+          <div className="w-[calc(theme(spacing.10)+theme(spacing.6))] shrink-0" aria-hidden />
         </div>
       </div>
     </header>

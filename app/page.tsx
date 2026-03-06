@@ -36,13 +36,6 @@ export default function HomePage() {
               className="h-14 w-auto shrink-0 object-contain drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)] sm:h-20"
             />
           </div>
-          <p
-            className="mb-6 text-base leading-relaxed text-white/95 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-lg"
-            style={{ fontFamily: "var(--font-raleway)" }}
-          >
-            Премиальные свадьбы в сердце Мещеры. Изысканность и роскошь на лоне
-            природы.
-          </p>
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8">
             <Image
               src="/top_awards_logo.svg"

@@ -143,7 +143,14 @@ export default function CateringPage() {
                 key={item}
                 className="flex items-center gap-3 border-b border-brand-muted/20 py-3"
               >
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-muted" aria-hidden />
+                <Image
+                  src="/diamond.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="h-5 w-5 shrink-0 object-contain"
+                  aria-hidden
+                />
                 <span className="text-brand-dark sm:text-base">{item}</span>
               </li>
             ))}
