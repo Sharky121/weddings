@@ -5,7 +5,7 @@ import { YandexMap } from "@/components/YandexMap";
 export const metadata = {
   title: "Контакты",
   description:
-    "Контакты Усадьбы Ушмор: адрес (Рязанская область, Клепиковский район, д. Ушмор), телефон 8 (910) 613-00-22, email, Telegram.",
+    "Контакты Усадьбы Ушмор: адрес (Рязанская область, Клепиковский район, д. Ушмор), телефон 8 (910) 613-00-22, email, Telegram, Мессенджер MAX.",
   keywords: ["контакты усадьба ушмор", "адрес усадьбы ушмор", "как добраться ушмор"],
 };
 
@@ -232,6 +232,19 @@ export default function ContactsPage() {
                     className="mt-1 inline-block text-brand-dark underline decoration-brand-muted underline-offset-2 hover:text-brand-dark"
                   >
                     Написать в Telegram
+                  </a>
+                </li>
+                <li>
+                  <p className="text-xs font-medium uppercase tracking-wider text-brand-dark/80">
+                    Мессенджер MAX
+                  </p>
+                  <a
+                    href="https://max.mail.ru"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-block text-brand-dark underline decoration-brand-muted underline-offset-2 hover:text-brand-dark"
+                  >
+                    Написать в Мессенджер MAX
                   </a>
                 </li>
               </ul>

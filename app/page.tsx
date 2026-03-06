@@ -21,12 +21,21 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
-          <h1
-            className="mb-4 text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
-            style={{ fontFamily: "var(--font-forum)" }}
-          >
-            Усадьба Ушмор
-          </h1>
+          <div className="mb-4 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+            <h1
+              className="text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
+              style={{ fontFamily: "var(--font-forum)" }}
+            >
+              Усадьба Ушмор
+            </h1>
+            <Image
+              src="/logo_no_text.png"
+              alt="Усадьба Ушмор"
+              width={120}
+              height={120}
+              className="h-14 w-auto shrink-0 object-contain drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)] sm:h-20"
+            />
+          </div>
           <p
             className="mb-6 text-base leading-relaxed text-white/95 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-lg"
             style={{ fontFamily: "var(--font-raleway)" }}

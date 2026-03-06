@@ -29,9 +29,9 @@ export default function Footer() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo_ushmor_white.png"
+                src="/logo_brown.png"
                 alt="Усадьба Ушмор"
-                className="h-24 w-auto invert sm:h-28 lg:h-20 xl:h-24"
+                className="h-24 w-auto sm:h-28 lg:h-20 xl:h-24 [mix-blend-mode:multiply]"
               />
             </Link>
             <p
@@ -104,6 +104,16 @@ export default function Footer() {
                   className="hover:text-brand-dark hover:underline"
                 >
                   Telegram
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://max.mail.ru"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-dark hover:underline"
+                >
+                  Мессенджер MAX
                 </a>
               </li>
             </ul>

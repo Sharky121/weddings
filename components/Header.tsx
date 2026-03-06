@@ -66,13 +66,16 @@ export default function Header() {
       <div className="relative mx-auto max-w-7xl">
         {/* Мобильная/планшетная шапка: логотип + гамбургер (до lg) */}
         <div className="flex items-center justify-between px-4 py-3 sm:px-6 lg:hidden">
-          <Link href="/" className="flex shrink-0 text-brand-dark hover:text-brand-dark/80">
+          <Link href="/" className="flex shrink-0 flex-col items-center text-brand-dark hover:text-brand-dark/80">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo_ushmor_white.png"
+              src="/logo_brown.png"
               alt="Усадьба Ушмор"
-              className="h-16 w-auto invert sm:h-20"
+              className="h-12 w-auto sm:h-14 [mix-blend-mode:multiply]"
             />
+            <span className="mt-0.5 text-xs font-semibold uppercase tracking-wider text-brand-dark sm:text-sm" style={navStyle}>
+              Премиальные свадьбы
+            </span>
           </Link>
           <button
             type="button"
@@ -207,13 +210,16 @@ export default function Header() {
               </div>
             </nav>
           </div>
-          <Link href="/" className="flex shrink-0 text-brand-dark hover:text-brand-dark/80">
+          <Link href="/" className="flex shrink-0 flex-col items-center text-center text-brand-dark hover:text-brand-dark/80">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo_ushmor_white.png"
+              src="/logo_brown.png"
               alt="Усадьба Ушмор"
-              className="h-[140px] w-auto invert"
+              className="h-16 w-auto sm:h-20 [mix-blend-mode:multiply]"
             />
+            <span className="mt-1 text-xs font-semibold uppercase tracking-wider text-brand-dark sm:text-sm" style={navStyle}>
+              Премиальные свадьбы
+            </span>
           </Link>
           <div className="flex flex-1 basis-0 justify-start pl-2 sm:pl-3">
             <nav
