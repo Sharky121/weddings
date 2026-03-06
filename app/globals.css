@@ -13,10 +13,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-brand-dark: 140 132 132;
-  --color-brand-muted: 195 210 218;
-  --color-brand-light: 252 250 248;
-  --color-brand-accent: 198 200 168;
+  --color-brand-dark: rgb(140, 132, 132);
+  --color-brand-muted: rgb(195, 210, 218);
+  --color-brand-light: rgb(252, 250, 248);
+  --color-brand-accent: rgb(198, 200, 168);
   --font-sans: var(--font-raleway);
   --font-mono: var(--font-raleway);
   --font-raleway: var(--font-raleway);

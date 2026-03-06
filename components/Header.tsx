@@ -66,22 +66,18 @@ export default function Header() {
       <div className="relative mx-auto max-w-7xl">
         {/* Мобильная/планшетная шапка: логотип + гамбургер (до lg) */}
         <div className="flex items-center justify-between gap-2 px-4 py-3 sm:px-6 lg:hidden">
-          <Link href="/" className="shrink-0" aria-label="Усадьба Ушмор — на главную">
+          <Link
+            href="/"
+            className="flex min-w-0 flex-1 items-center justify-start gap-2 text-left text-brand-dark hover:text-brand-dark/80 sm:gap-3"
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo_brown.png?v=2"
               alt=""
-              className="h-12 w-auto sm:h-14 [mix-blend-mode:multiply]"
+              className="h-12 w-auto shrink-0 sm:h-14 [mix-blend-mode:multiply]"
             />
-          </Link>
-          <Link
-            href="/"
-            className="flex min-w-0 flex-1 items-center justify-center px-2 text-center text-brand-dark hover:text-brand-dark/80"
-          >
-            <span className="text-xs font-semibold leading-tight text-brand-dark/90 sm:text-sm" style={navStyle}>
-              Премиальные свадьбы в сердце Мещеры.
-              <br />
-              Изысканность и роскошь на лоне природы.
+            <span className="max-w-[250px] shrink-0 text-xs font-semibold leading-tight text-brand-dark/90 sm:text-sm" style={navStyle}>
+              Премиальные свадьбы в сердце Мещеры. Изысканность и роскошь на лоне природы.
             </span>
           </Link>
           <button
@@ -189,69 +185,46 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Десктоп: расширенный хедер (логотип + меню в 2 колонки) */}
+        {/* Десктоп: расширенный хедер (текст + лого слева, меню справа) */}
         <div
-          className={`mx-auto hidden items-center justify-between gap-0 px-4 py-4 lg:flex lg:px-8 lg:py-5 ${
+          className={`mx-auto hidden items-center justify-between gap-4 px-4 py-4 lg:flex lg:px-8 lg:py-5 ${
             isScrolled ? "pointer-events-none absolute inset-0 opacity-0" : ""
           }`}
         >
-          <div className="flex flex-1 basis-0 justify-end pr-2 sm:pr-3">
-            <nav
-              className="flex flex-col items-center gap-y-1 sm:gap-y-2"
-              aria-label="Основное меню"
-              style={navStyle}
-            >
-              <div className={linkRowClass}>
-                {navItems.slice(0, 3).map(({ label, href }) => (
-                  <Link key={href} href={href} className={linkClass(pathname === href)}>
-                    {label}
-                  </Link>
-                ))}
-              </div>
-              <div className={linkRowClass}>
-                {navItems.slice(3, 5).map(({ label, href }) => (
-                  <Link key={href} href={href} className={linkClass(pathname === href)}>
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            </nav>
-          </div>
-          <Link href="/" className="flex max-w-[200px] shrink-0 flex-col items-center text-center text-brand-dark hover:text-brand-dark/80 sm:max-w-[240px]">
+          <Link
+            href="/"
+            className="flex shrink-0 items-center justify-start gap-3 text-left text-brand-dark hover:text-brand-dark/80 sm:gap-4"
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo_brown.png?v=2"
               alt="Усадьба Ушмор"
-              className="h-16 w-auto sm:h-20 [mix-blend-mode:multiply]"
+              className="h-16 w-auto shrink-0 sm:h-20 [mix-blend-mode:multiply]"
             />
-            <span className="mt-2 block text-xs font-semibold leading-tight text-brand-dark/90 sm:text-sm" style={navStyle}>
-              Премиальные свадьбы в сердце Мещеры.
-              <br />
-              Изысканность и роскошь на лоне природы.
+            <span className="max-w-[250px] shrink-0 text-left text-xs font-semibold leading-tight text-brand-dark/90 sm:text-sm" style={navStyle}>
+              Премиальные свадьбы в сердце Мещеры. Изысканность и роскошь на лоне природы.
             </span>
           </Link>
-          <div className="flex flex-1 basis-0 justify-start pl-2 sm:pl-3">
-            <nav
-              className="flex flex-col items-center gap-y-1 sm:gap-y-2"
-              aria-label="Основное меню"
-              style={navStyle}
-            >
-              <div className={linkRowClass}>
-                {navItems.slice(5, 8).map(({ label, href }) => (
-                  <Link key={href} href={href} className={linkClass(pathname === href)}>
-                    {label}
-                  </Link>
-                ))}
-              </div>
-              <div className={linkRowClass}>
-                {navItems.slice(8, 10).map(({ label, href }) => (
-                  <Link key={href} href={href} className={linkClass(pathname === href)}>
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            </nav>
-          </div>
+          <nav
+            className="flex flex-1 flex-wrap items-center justify-end gap-x-5 gap-y-1 py-0.5 sm:gap-x-8"
+            aria-label="Основное меню"
+            style={navStyle}
+          >
+            <div className={linkRowClass}>
+              {navItems.slice(0, 5).map(({ label, href }) => (
+                <Link key={href} href={href} className={linkClass(pathname === href)}>
+                  {label}
+                </Link>
+              ))}
+            </div>
+            <div className={linkRowClass}>
+              {navItems.slice(5, 10).map(({ label, href }) => (
+                <Link key={href} href={href} className={linkClass(pathname === href)}>
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </nav>
         </div>
 
         {/* Десктоп: компактный хедер при скролле */}
