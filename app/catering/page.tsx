@@ -118,8 +118,8 @@ export default function CateringPage() {
       </section>
 
       {/* Преимущества */}
-      <section className="border-t border-brand-muted/50 bg-brand-light/50 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <section className="border-t border-brand-muted/50 bg-gradient-to-b from-brand-light/40 to-brand-light/70 py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2
               className="text-2xl font-normal tracking-wide text-brand-dark sm:text-3xl"
@@ -134,23 +134,23 @@ export default function CateringPage() {
               Почему выбирают наш кейтеринг
             </p>
           </div>
-          <ul
-            className="mx-auto grid max-w-3xl grid-cols-1 gap-x-12 gap-y-0 sm:grid-cols-2"
-            style={{ fontFamily: "var(--font-raleway)" }}
-          >
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 lg:gap-5">
             {cateringAdvantages.map((item) => (
               <li
                 key={item}
-                className="flex items-center gap-3 border-b border-brand-muted/20 py-3"
+                className="group flex items-center gap-4 rounded-2xl border border-brand-muted/30 bg-white/90 px-5 py-4 shadow-sm transition-all duration-300 hover:border-brand-muted/50 hover:shadow-md sm:gap-5 sm:px-6 sm:py-5"
+                style={{ fontFamily: "var(--font-raleway)" }}
               >
-                <Image
-                  src="/diamond.svg"
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="h-5 w-5 shrink-0 object-contain"
-                  aria-hidden
-                />
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-light/80 ring-1 ring-brand-muted/20 transition-colors group-hover:bg-brand-muted/20 sm:h-12 sm:w-12">
+                  <Image
+                    src="/diamond.svg"
+                    alt=""
+                    width={24}
+                    height={24}
+                    className="h-6 w-6 object-contain sm:h-7 sm:w-7"
+                    aria-hidden
+                  />
+                </span>
                 <span className="text-brand-dark sm:text-base">{item}</span>
               </li>
             ))}
