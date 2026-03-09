@@ -25,6 +25,8 @@ const weddingLocationImages = [
   "/wedding_5.jpg",
   "/wedding_7.jpg",
   "/wedding_8.jpg",
+  "/wedding_reception.png",
+  "/wedding_ceremony_arch.png",
 ];
 
 export default function WeddingPage() {
