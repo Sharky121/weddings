@@ -16,14 +16,21 @@ const priceRows = [
     image: "/welcome_bg.jpg",
   },
   {
+    name: "Аренда Усадьбы на Пре",
+    detail:
+      "Аренда с 18.00 вечера накануне мероприятия и до 6.00 утра следующего дня, после мероприятия",
+    price: "350 000₽/мероприятие",
+    image: "/usadba_parade.png",
+  },
+  {
     name: "Аренда Зимнего Сада Графского Дома",
-    price: null,
-    image: "/usadba_1.jpg",
+    price: "от 250 000Р",
+    image: "/usadba_rotunda.png",
   },
   {
     name: "Аренда гостевого дома (Размещение до 12 гостей)",
     price: "150 000Р/ сутки",
-    image: "/guest_home_bg.jpg",
+    image: "/guest_bg.jpg",
   },
 ];
 
@@ -38,17 +45,11 @@ export default function PricePage() {
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
-            className="mb-4 text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
+            className="text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
             Прайс-лист
           </h1>
-          <p
-            className="text-base leading-relaxed text-white/95 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-lg"
-            style={{ fontFamily: "var(--font-raleway)" }}
-          >
-            Узнайте стоимость аренды усадьбы и дополнительных услуг
-          </p>
         </div>
         <a
           href="#content"
@@ -97,9 +98,23 @@ export default function PricePage() {
         </a>
       </section>
 
-      {/* Прайс — три карточки с изображением, описанием и ценой */}
+      {/* Прайс — цитата и карточки */}
       <section id="content" className="border-t border-brand-muted/50 bg-brand-light/85 py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <blockquote className="relative mb-12 text-center sm:mb-14">
+            <span
+              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
+              aria-hidden
+            >
+              {"\u201C"}
+            </span>
+            <p
+              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
+              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
+            >
+              Узнайте стоимость аренды усадьбы и дополнительных услуг
+            </p>
+          </blockquote>
           <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-3">
             {priceRows.map((row, index) => (
               <article

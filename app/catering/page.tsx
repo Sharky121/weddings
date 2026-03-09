@@ -19,9 +19,8 @@ const cateringAdvantages = [
   "Наличие собственной мебели, текстиля, шатров",
 ];
 
-const cateringBanquetImages = Array.from(
-  { length: 19 },
-  (_, i) => `/catering/catering_${i + 1}.jpg`
+const cateringBanquetImages = [2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19].map(
+  (n) => `/catering/catering_${n}.jpg`
 );
 
 export default function CateringPage() {

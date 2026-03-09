@@ -34,17 +34,11 @@ export default function PortfolioPage() {
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
-            className="mb-6 text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
+            className="text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
             Портфолио
           </h1>
-          <p
-            className="text-base leading-relaxed text-white/95 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-lg"
-            style={{ fontFamily: "var(--font-raleway)" }}
-          >
-            Реальные истории и моменты свадеб, которые уже состоялись в Усадьбе Ушмор.
-          </p>
         </div>
         <a
           href="#content"
@@ -93,12 +87,26 @@ export default function PortfolioPage() {
         </a>
       </section>
 
-      {/* Секция с блоками портфолио */}
+      {/* Секция с цитатой и блоками портфолио */}
       <section
         id="content"
         className="border-t border-brand-muted/50 bg-brand-light/85 py-12 sm:py-16 lg:py-20"
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <blockquote className="relative mb-12 text-center sm:mb-14">
+            <span
+              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
+              aria-hidden
+            >
+              {"\u201C"}
+            </span>
+            <p
+              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
+              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
+            >
+              Реальные истории и моменты свадеб, которые уже состоялись в Усадьбе Ушмор.
+            </p>
+          </blockquote>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
             {portfolioItems.map((item) => (
               <PortfolioBlock
