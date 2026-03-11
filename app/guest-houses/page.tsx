@@ -105,7 +105,7 @@ export default function GuestHousesPage() {
             >
               Гостевой Дом Усадьбы Ушмор спроектирован в готическом стиле, отделен
               от основного пространства живой изгородью, что позволяет гостям с
-              комфортом отдыхать в уютном дворике.
+              комфортом отдыхать в уютном дворике. Площадь дома — 400м², готов принять до 12 гостей.
             </p>
           </blockquote>
           <p
@@ -116,12 +116,7 @@ export default function GuestHousesPage() {
             <br />
             <span className="font-semibold text-brand-dark">Английская</span> и <span className="font-semibold text-brand-dark">Прованс</span>.
           </p>
-          <p
-            className="mt-4 text-center text-lg font-normal tracking-wide text-brand-dark sm:text-xl"
-            style={{ fontFamily: "var(--font-forum)", lineHeight: 1.6 }}
-          >
-            Площадь дома — 400м², готов принять до 12 гостей.
-          </p>
+
         </div>
       </section>
 

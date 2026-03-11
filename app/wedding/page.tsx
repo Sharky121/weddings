@@ -128,6 +128,22 @@ export default function WeddingPage() {
               церемонии бракосочетания, фуршета, банкета. Отдаленность от населенных пунктов
             </p>
           </blockquote>
+          <blockquote className="relative mt-10 text-center">
+            <span
+              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
+              aria-hidden
+            >
+              {"\u201C"}
+            </span>
+            <p
+              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
+              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
+            >
+              Усадьба окружена лесом и граничит с Иванковским озером, а ее большая
+              территория позволяет воплотить в жизнь все ваши желания, а торжество
+              не будет нарушено посторонним вмешательством. Территория Усадьбы Ушмор охраняется круглосуточно.
+            </p>
+          </blockquote>
         </div>
       </section>
 
@@ -162,28 +178,6 @@ export default function WeddingPage() {
             labels={locations.map((name) => `Свадебная локация — ${name}`)}
             imageClassName="h-72 w-full object-cover sm:h-80 lg:h-96"
           />
-        </div>
-      </section>
-
-      {/* Отдаленность и территория */}
-      <section className="border-t border-brand-muted/50 bg-brand-light/80 py-14 sm:py-16 lg:py-24">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <blockquote className="relative text-center">
-            <span
-              className="absolute -top-2 left-0 text-7xl font-serif leading-none text-brand-light sm:text-8xl"
-              aria-hidden
-            >
-              {"\u201C"}
-            </span>
-            <p
-              className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
-              style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
-            >
-              Усадьба окружена лесом и граничит с Иванковским озером, а ее большая
-              территория позволяет воплотить в жизнь все ваши желания, а торжество
-              не будет нарушено посторонним вмешательством. Территория Усадьбы Ушмор охраняется круглосуточно.
-            </p>
-          </blockquote>
         </div>
       </section>
     </>

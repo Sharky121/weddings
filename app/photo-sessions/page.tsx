@@ -18,6 +18,18 @@ const fotosessionImages = [
   "/fotosession_9.jpg",
   "/fotosession_5.png",
   "/fotosession_6.png",
+  "/fotosession_10.png",
+  "/fotosession_11.png",
+  "/fotosession_12.png",
+  "/fotosession_13.png",
+  "/fotosession_14.png",
+  "/fotosession_15.png",
+  "/fotosession_16.png",
+  "/fotosession_17.png",
+  "/fotosession_18.png",
+  "/fotosession_19.png",
+  "/fotosession_20.png",
+  "/fotosession_21.png",
 ];
 
 export default function PhotoSessionsPage() {
@@ -101,7 +113,7 @@ export default function PhotoSessionsPage() {
               className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
               style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
             >
-              Соединившая в себе исторический антураж и природную эстетику Усадьба Ушмор — уникальная локация для проведения неповторимых фото и видео сессий.
+              Усадьба Ушмор соединившая в себе исторический антураж и природную эстетику — уникальная локация для проведения неповторимых фото и видео сессий.
             </p>
             <p
               className="relative mt-6 text-lg leading-loose text-brand-dark sm:text-xl lg:text-2xl"
