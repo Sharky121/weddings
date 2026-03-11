@@ -76,7 +76,7 @@ export default function Header() {
               alt=""
               className="h-12 w-auto shrink-0 sm:h-14 [mix-blend-mode:multiply]"
             />
-            <span className="max-w-[250px] shrink-0 text-sm font-semibold leading-tight text-brand-dark/90 sm:text-base" style={navStyle}>
+            <span className="max-w-[250px] shrink-0 text-base font-semibold leading-tight text-brand-dark/90 sm:text-lg" style={navStyle}>
               Премиальные свадьбы в сердце Мещеры. Изысканность и роскошь на лоне природы.
             </span>
           </Link>
@@ -201,7 +201,7 @@ export default function Header() {
               alt="Усадьба Ушмор"
               className="h-16 w-auto shrink-0 sm:h-20 [mix-blend-mode:multiply]"
             />
-            <span className="max-w-[250px] shrink-0 text-left text-sm font-semibold leading-tight text-brand-dark/90 sm:text-base" style={navStyle}>
+            <span className="max-w-[250px] shrink-0 text-left text-base font-semibold leading-tight text-brand-dark/90 sm:text-lg" style={navStyle}>
               Премиальные свадьбы в сердце Мещеры. Изысканность и роскошь на лоне природы.
             </span>
           </Link>
