@@ -66,17 +66,19 @@ export default function Header() {
       <div className="relative mx-auto max-w-7xl">
         {/* Мобильная/планшетная шапка: логотип + гамбургер (до lg) */}
         <div className="flex items-center justify-between gap-2 px-4 py-3 sm:px-6 lg:hidden">
-          <Link
-            href="/"
-            className="flex min-w-0 flex-1 items-center justify-start gap-2 text-left text-brand-dark hover:text-brand-dark/80 sm:gap-3"
-          >
+          <Link href="/" className="shrink-0" aria-label="Усадьба Ушмор — на главную">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo_brown.png?v=2"
               alt=""
-              className="h-12 w-auto shrink-0 sm:h-14 [mix-blend-mode:multiply]"
+              className="h-12 w-auto sm:h-14 [mix-blend-mode:multiply]"
             />
-            <span className="max-w-[250px] shrink-0 text-base font-semibold leading-tight text-brand-dark/90 sm:text-lg" style={navStyle}>
+          </Link>
+          <Link
+            href="/"
+            className="flex min-w-0 flex-1 items-center justify-center px-2 text-center text-brand-dark hover:text-brand-dark/80"
+          >
+            <span className="max-w-[280px] text-base font-semibold leading-tight text-brand-dark/90 sm:text-lg" style={navStyle}>
               Премиальные свадьбы в сердце Мещеры. Изысканность и роскошь на лоне природы.
             </span>
           </Link>
@@ -193,7 +195,7 @@ export default function Header() {
         >
           <Link
             href="/"
-            className="flex shrink-0 items-center justify-start gap-3 text-left text-brand-dark hover:text-brand-dark/80 sm:gap-4"
+            className="flex shrink-0 items-center justify-start gap-4 text-left text-brand-dark hover:text-brand-dark/80 sm:gap-5"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -201,7 +203,7 @@ export default function Header() {
               alt="Усадьба Ушмор"
               className="h-16 w-auto shrink-0 sm:h-20 [mix-blend-mode:multiply]"
             />
-            <span className="max-w-[250px] shrink-0 text-left text-base font-semibold leading-tight text-brand-dark/90 sm:text-lg" style={navStyle}>
+            <span className="max-w-[280px] shrink-0 text-left text-base font-semibold leading-tight text-brand-dark/90 sm:text-lg" style={navStyle}>
               Премиальные свадьбы в сердце Мещеры. Изысканность и роскошь на лоне природы.
             </span>
           </Link>
