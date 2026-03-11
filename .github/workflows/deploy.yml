@@ -1,10 +1,11 @@
 name: CI/CD Deploy to VPS
 
-# Событие, которое запускает процесс — пуш в ветку main
+# Запускать при пуше в main или master
 on:
   push:
-    branches: [ main ] #
-    
+    branches: [ main, master ]
+
+# Подавить предупреждение о Node.js 20 (опционально)
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -12,11 +13,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1. Клонируем код из репозитория на виртуальную машину GitHub
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Подключаемся к VPS по SSH и выполняем команды
       - name: Deploy to VPS
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -24,35 +23,39 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            # Эта часть выполняется прямо на твоем сервере!
-            set -e # Прервать скрипт, если какая-то команда завершится ошибкой
+            set -e
+
+            # Загружаем nvm (предполагается, что он установлен для root)
+            export NVM_DIR="$HOME/.nvm"
+            if [ -s "$NVM_DIR/nvm.sh" ]; then
+              \. "$NVM_DIR/nvm.sh"
+              nvm use default || echo "⚠️  Не удалось переключиться на default Node.js, используется системный"
+            else
+              echo "⚠️  nvm не найден, проверяем доступность npm..."
+            fi
+
+            # Проверяем, что npm теперь доступен
+            command -v npm || { echo "❌ npm не найден!"; exit 1; }
 
             echo "🚀 Начинаем деплой для проекта ${{ secrets.PM2_NAME }}"
-
-            # Переходим в папку проекта
             cd ${{ secrets.PROJECT_PATH }}
 
-            # Сохраняем текущую версию package-lock на случай отката (опционально)
-            # cp package-lock.json package-lock.backup.json || true
-
-            # Тянем последние изменения из Git
+            # Обновляем код из репозитория
             git fetch --all
-            git pull origin main # или master, смотря как называется твоя ветка
+            git pull origin main
 
-            # Устанавливаем зависимости (игнорируем dev-зависимости для продакшена)
-            # Используем npm ci для быстрой и чистой установки по lock-файлу
+            # Устанавливаем зависимости (только production)
             npm ci --omit=dev || npm install --omit=dev
 
             # Собираем проект
             npm run build
 
-            # Запускаем или перезапускаем процесс в PM2
-            # Используем startOrReload, который опирается на ecosystem.config.js
+            # Работа с PM2
             if command -v pm2 &> /dev/null; then
                 pm2 startOrReload ecosystem.config.js --update-env
                 pm2 save
             else
-                echo "⚠️ PM2 не найден, устанавливаю..."
+                echo "⚠️  PM2 не найден, устанавливаю глобально..."
                 npm install -g pm2
                 pm2 start ecosystem.config.js
                 pm2 save
