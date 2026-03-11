@@ -1,11 +1,9 @@
 name: CI/CD Deploy to VPS
 
-# Запускать при пуше в main или master
 on:
   push:
     branches: [ main, master ]
 
-# Подавить предупреждение о Node.js 20 (опционально)
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -25,29 +23,32 @@ jobs:
           script: |
             set -e
 
-            # Загружаем nvm (предполагается, что он установлен для root)
+            # Загружаем nvm
             export NVM_DIR="$HOME/.nvm"
             if [ -s "$NVM_DIR/nvm.sh" ]; then
               \. "$NVM_DIR/nvm.sh"
-              nvm use default || echo "⚠️  Не удалось переключиться на default Node.js, используется системный"
+              nvm use default || echo "⚠️ Не удалось переключиться на default Node.js, используется системный"
             else
-              echo "⚠️  nvm не найден, проверяем доступность npm..."
+              echo "⚠️ nvm не найден, проверяем доступность npm..."
             fi
 
-            # Проверяем, что npm теперь доступен
+            # Проверяем npm
             command -v npm || { echo "❌ npm не найден!"; exit 1; }
 
             echo "🚀 Начинаем деплой для проекта ${{ secrets.PM2_NAME }}"
             cd ${{ secrets.PROJECT_PATH }}
 
-            # Обновляем код из репозитория
+            # Обновляем код
             git fetch --all
             git pull origin main
 
-            # Устанавливаем зависимости (только production)
+            # Устанавливаем production-зависимости
             npm ci --omit=dev || npm install --omit=dev
 
-            # Собираем проект
+            # Временно устанавливаем typescript (нужен для next.config.ts)
+            npm install --no-save typescript
+
+            # Сборка проекта
             npm run build
 
             # Работа с PM2
@@ -55,7 +56,7 @@ jobs:
                 pm2 startOrReload ecosystem.config.js --update-env
                 pm2 save
             else
-                echo "⚠️  PM2 не найден, устанавливаю глобально..."
+                echo "⚠️ PM2 не найден, устанавливаю..."
                 npm install -g pm2
                 pm2 start ecosystem.config.js
                 pm2 save
