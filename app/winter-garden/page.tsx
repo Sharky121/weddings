@@ -1,9 +1,9 @@
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 export const metadata = {
-  title: "Зимний сад",
+  title: "Зимний сад Графского дома",
   description:
-    "Зимний сад в Усадьбе Ушмор — уютное пространство для мероприятий и отдыха. Рязанская область, Мещера.",
+    "Зимний сад Графского дома в Усадьбе Ушмор — уютное пространство для мероприятий и отдыха. Рязанская область, Мещера.",
 };
 
 export default function WinterGardenPage() {
@@ -13,14 +13,14 @@ export default function WinterGardenPage() {
       <section
         className="relative flex h-[calc(100dvh-12rem)] min-h-[280px] flex-col items-center justify-center overflow-hidden bg-brand-dark px-4 sm:px-6"
       >
-        <ParallaxBackground backgroundImage="/welcome_bg.jpg" />
+        <ParallaxBackground backgroundImage="/winter-garden_bg.png" />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
         <div className="relative z-10 max-w-2xl text-center">
           <h1
             className="text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
-            Зимний сад
+            Зимний сад Графского дома
           </h1>
         </div>
         <a
