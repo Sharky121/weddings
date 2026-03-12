@@ -127,6 +127,12 @@ export default function Footer() {
           >
             © {new Date().getFullYear()} Усадьба Ушмор. ООО «УК УШМОР».
           </p>
+          <p
+            className="mt-2 text-center text-[11px] text-brand-dark/70 sm:text-xs"
+            style={{ fontFamily: "var(--font-raleway)" }}
+          >
+            ИНН 6234173874 · ОГРН 1176234028651
+          </p>
         </div>
       </div>
     </footer>
