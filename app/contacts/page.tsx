@@ -255,6 +255,19 @@ export default function ContactsPage() {
                     Написать в Мессенджер MAX
                   </a>
                 </li>
+                <li>
+                  <p className="text-xs font-medium uppercase tracking-wider text-brand-dark/80">
+                    ВКонтакте
+                  </p>
+                  <a
+                    href="https://vk.ru/ushmor_manor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-block text-brand-dark underline decoration-brand-muted underline-offset-2 hover:text-brand-dark"
+                  >
+                    Резиденции Ушмор
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

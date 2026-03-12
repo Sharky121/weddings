@@ -116,6 +116,16 @@ export default function Footer() {
                   Мессенджер MAX
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://vk.ru/ushmor_manor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-dark hover:underline"
+                >
+                  ВКонтакте
+                </a>
+              </li>
             </ul>
           </div>
         </div>
