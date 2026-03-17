@@ -104,7 +104,7 @@ export default function WeddingCeremonyPage() {
             className="mb-8 text-center text-brand-dark"
             style={{ fontFamily: "var(--font-raleway)" }}
           >
-            Венчание в храме — атмосфера и таинство
+            Атмосфера таинства Венчания в храме
           </p>
         </div>
         <div className="aspect-video w-full overflow-hidden">
