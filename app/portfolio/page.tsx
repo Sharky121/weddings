@@ -104,7 +104,7 @@ export default function PortfolioPage() {
               className="relative pt-8 text-lg leading-loose text-brand-dark sm:pt-10 sm:text-xl lg:text-2xl"
               style={{ fontFamily: "var(--font-forum)", lineHeight: 1.7 }}
             >
-              Реальные истории и моменты свадеб, которые уже состоялись в Усадьбе Ушмор.
+              Наши свадьбы
             </p>
           </blockquote>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">

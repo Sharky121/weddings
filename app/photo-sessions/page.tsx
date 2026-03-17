@@ -46,7 +46,7 @@ export default function PhotoSessionsPage() {
             className="text-4xl font-normal tracking-wide text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl"
             style={{ fontFamily: "var(--font-forum)" }}
           >
-            Фотосессии в Усадьбах
+            Фотосессии в Усадьбе
           </h1>
         </div>
         <a
