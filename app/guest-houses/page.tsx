@@ -204,7 +204,7 @@ export default function GuestHousesPage() {
                 style={{ fontFamily: "var(--font-raleway)" }}
               >
                 <li>Две спальни и большой санузел с душем</li>
-                <li>Гостина-кухня и кабинет-библиотека</li>
+                <li>Гостиная-кухня и кабинет-библиотека</li>
               </ul>
             </div>
             <GuestHousePhotoGrid
