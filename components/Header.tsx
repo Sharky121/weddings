@@ -64,16 +64,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-brand-muted/40 bg-white">
       <div className="relative mx-auto max-w-7xl">
-        {/* Мобильная/планшетная шапка: логотип + гамбургер (до lg) */}
+        {/* Мобильная/планшетная шапка: слоган + гамбургер (до lg) */}
         <div className="flex items-center justify-between gap-2 px-4 py-3 sm:px-6 lg:hidden">
-          <Link href="/" className="shrink-0" aria-label="Усадьба Ушмор — на главную">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo_brown.png?v=2"
-              alt=""
-              className="h-12 w-auto sm:h-14 [mix-blend-mode:multiply]"
-            />
-          </Link>
           <Link
             href="/"
             className="flex min-w-0 flex-1 items-center justify-center px-2 text-center text-brand-dark hover:text-brand-dark/80"
@@ -195,14 +187,8 @@ export default function Header() {
         >
           <Link
             href="/"
-            className="flex shrink-0 items-center justify-start gap-4 text-left text-brand-dark hover:text-brand-dark/80 sm:gap-5"
+            className="flex shrink-0 items-center justify-start text-left text-brand-dark hover:text-brand-dark/80"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo_brown.png?v=2"
-              alt="Усадьба Ушмор"
-              className="h-16 w-auto shrink-0 sm:h-20 [mix-blend-mode:multiply]"
-            />
             <span className="max-w-[280px] shrink-0 text-left text-base font-semibold leading-tight text-brand-dark/90 sm:text-lg" style={navStyle}>
               Премиальные свадьбы в сердце Мещеры. Изысканность и роскошь на лоне природы.
             </span>
@@ -235,14 +221,7 @@ export default function Header() {
             !isScrolled ? "pointer-events-none absolute inset-0 opacity-0" : ""
           }`}
         >
-          <Link href="/" className="shrink-0" aria-label="Усадьба Ушмор — на главную">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo_brown.png?v=2"
-              alt=""
-              className="h-10 w-auto [mix-blend-mode:multiply]"
-            />
-          </Link>
+          <div className="w-10 shrink-0" aria-hidden />
           <nav
             className="flex flex-1 flex-nowrap items-center justify-center gap-x-5 py-1 text-xs uppercase tracking-wider"
             aria-label="Основное меню"
