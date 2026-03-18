@@ -58,6 +58,10 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   alternates: { canonical: SITE_URL },
+  icons: {
+    icon: [{ url: "/favicon.ico?v=2", type: "image/x-icon" }],
+    apple: "/icon.png",
+  },
 };
 
 const jsonLd = {
