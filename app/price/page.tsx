@@ -31,7 +31,7 @@ const priceRows = [
   {
     name: "Аренда Зимнего Сада Графского Дома",
     price: "от 250 000₽",
-    image: "/usadba_rotunda.png",
+    image: "/winter-garden_bg.png",
   },
   {
     name: "Аренда гостевого дома (Размещение до 12 гостей)",
@@ -45,7 +45,7 @@ const priceRows = [
     detail2:
       "Фотосессия в интерьерах Графского дома (холл, каминный зал, библиотека, зимний сад)",
     priceExtra: "+ 10 000₽",
-    image: "/winter-garden_bg.png",
+    image: "/fotosession_20.png",
   },
 ];
 
