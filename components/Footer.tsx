@@ -98,7 +98,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://t.me/usadba_na_pre"
+                  href="https://t.me/+79155969524"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-brand-dark hover:underline"

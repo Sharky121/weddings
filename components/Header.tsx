@@ -167,7 +167,7 @@ export default function Header() {
                 info@usadba-na-pre.ru
               </a>
               <a
-                href="https://t.me/usadba_na_pre"
+                href="https://t.me/+79155969524"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block py-1.5 text-sm text-brand-dark/90 hover:text-brand-accent"

@@ -234,7 +234,7 @@ export default function ContactsPage() {
                     Telegram
                   </p>
                   <a
-                    href="https://t.me/usadba_na_pre"
+                    href="https://t.me/+79155969524"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-1 inline-block text-brand-dark underline decoration-brand-muted underline-offset-2 hover:text-brand-dark"
