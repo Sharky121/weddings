@@ -7,44 +7,38 @@ export const metadata = {
   keywords: ["прайс усадьба ушмор", "аренда усадьбы под свадьбу", "стоимость мероприятия"],
 };
 
+/** Временно: цены скрыты, в карточках показывается «по запросу». */
 const priceRows = [
   {
     name: "Аренда Усадьбы Ушмор",
     detail:
       "Аренда территории Усадьбы Ушмор (включая Манеж и шатер) для проведения свадебного мероприятия (с 6 утра дня  мероприятия до 6 утра следующего дня)",
-    price: "450 000₽/ мероприятие",
     image: "/welcome_bg.jpg",
   },
   {
     name: "Аренда Усадьбы на Пре",
     detail:
       "Аренда территории Усадьбы на Пре ( без учета банного комплекса)  для проведения свадебного мероприятия ( с 6 утра дня мероприятия до 6 утра следующего дня)",
-    price: "350 000₽/мероприятие",
     image: "/usadba_dom_na_pre.png",
   },
   {
     name: "Аренда Дома Усадьбы на Пре",
     detail: "Размещение до 12 гостей",
-    price: "150 000₽/ сутки",
     image: "/usadba_na_pre.png",
   },
   {
     name: "Аренда Зимнего Сада Графского Дома",
-    price: "от 250 000₽",
     image: "/winter-garden_bg.png",
   },
   {
     name: "Аренда гостевого дома (Размещение до 12 гостей)",
-    price: "150 000₽/ сутки",
     image: "/guest_bg.jpg",
   },
   {
     name: "Камерная фотосессия",
     detail: "В любой локации на территории Усадьбы Ушмор.",
-    price: "20 000₽/3 часа",
     detail2:
       "Фотосессия в интерьерах Графского дома (холл, каминный зал, библиотека, зимний сад)",
-    priceExtra: "+ 10 000₽",
     image: "/fotosession_20.png",
   },
 ];
@@ -159,53 +153,35 @@ export default function PricePage() {
                       </p>
                     ) : null}
                     {"detail2" in row && row.detail2 ? (
-                      <>
-                        {row.price ? (
-                          <p
-                            className="mt-2 text-xl font-normal text-brand-dark"
-                            style={{ fontFamily: "var(--font-forum)" }}
-                          >
-                            {row.price}
-                          </p>
-                        ) : null}
-                        <div className="mt-3 border-t border-brand-muted/40 pt-3">
-                          <p
-                            className="text-sm leading-relaxed text-brand-dark"
-                            style={{ fontFamily: "var(--font-raleway)" }}
-                          >
-                            {row.detail2}
-                          </p>
-                          {"priceExtra" in row && row.priceExtra ? (
-                            <p
-                              className="mt-2 text-lg font-normal text-brand-dark"
-                              style={{ fontFamily: "var(--font-forum)" }}
-                            >
-                              {row.priceExtra}
-                            </p>
-                          ) : null}
-                        </div>
-                      </>
-                    ) : null}
-                  </div>
-                  {"detail2" in row && row.detail2 ? null : (
-                    <div className="mt-4 border-t border-brand-muted/40 pt-4">
-                      {row.price ? (
+                      <div className="mt-3 border-t border-brand-muted/40 pt-3">
                         <p
-                          className="text-xl font-normal text-brand-dark"
-                          style={{ fontFamily: "var(--font-forum)" }}
-                        >
-                          {row.price}
-                        </p>
-                      ) : (
-                        <p
-                          className="text-brand-dark/80"
+                          className="text-sm leading-relaxed text-brand-dark"
                           style={{ fontFamily: "var(--font-raleway)" }}
                         >
-                          По запросу
+                          {row.detail2}
                         </p>
-                      )}
-                    </div>
-                  )}
+                      </div>
+                    ) : null}
+                  </div>
+                  <div className="mt-4 border-t border-brand-muted/40 pt-4">
+                    {"price" in row &&
+                    typeof row.price === "string" &&
+                    row.price.length > 0 ? (
+                      <p
+                        className="text-xl font-normal text-brand-dark"
+                        style={{ fontFamily: "var(--font-forum)" }}
+                      >
+                        {row.price}
+                      </p>
+                    ) : (
+                      <p
+                        className="text-xl font-normal text-brand-dark"
+                        style={{ fontFamily: "var(--font-forum)" }}
+                      >
+                        По запросу
+                      </p>
+                    )}
+                  </div>
                 </div>
               </article>
             ))}
