@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { blurProps } from "@/lib/images";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Thumbs, Navigation, FreeMode } from "swiper/modules";
@@ -74,6 +75,7 @@ export function ImageSliderWithThumbs({
                 <div className="relative h-full w-full bg-brand-light">
                   <Image
                     src={src}
+                    {...blurProps(src)}
                     alt={labels[i] ?? `Фото ${i + 1}`}
                     fill
                     className={mainImageClassName}
@@ -133,6 +135,7 @@ export function ImageSliderWithThumbs({
               <div className="relative h-full w-full overflow-hidden rounded-lg border-2 border-transparent transition-all [.swiper-slide-thumb-active_&]:border-brand-muted/60 [.swiper-slide-thumb-active_&]:ring-2 [.swiper-slide-thumb-active_&]:ring-brand-muted/60 [.swiper-slide-thumb-active_&]:ring-offset-2">
                 <Image
                   src={src}
+                  {...blurProps(src)}
                   alt=""
                   width={thumbWidth}
                   height={thumbHeight}

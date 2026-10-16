@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { blurProps } from "@/lib/images";
 import { ImageLightbox } from "./ImageLightbox";
 
 type Props = {
@@ -28,6 +29,7 @@ export function GuestHousePhotoGrid({ images, labels }: Props) {
             >
               <Image
                 src={src}
+                {...blurProps(src)}
                 alt={labels[i] ?? `Фото ${i + 1}`}
                 width={600}
                 height={400}

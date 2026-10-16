@@ -82,3 +82,6 @@ yarn-error.log*
 next-env.d.ts
 
 # Видео хранятся в репозитории через Git LFS (public/wedding-about.mp4, public/wedding-ceremony.mp4)
+
+# генерируется scripts/gen-blur.mjs перед сборкой
+/lib/blur-data.json

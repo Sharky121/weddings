@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useState, type ReactNode } from "react";
-import Lightbox from "yet-another-react-lightbox";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import "yet-another-react-lightbox/styles.css";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
+import { blurProps, blurStyle, optimizedSrc } from "@/lib/images";
+
+// Код лайтбокса (~40 КБ) грузится только при первом клике по фото, а не вместе со страницей.
+const LightboxView = dynamic(() => import("./LightboxView"), { ssr: false });
 
 export type Slide = { src: string; alt?: string };
 
@@ -17,25 +18,28 @@ type ImageLightboxProps = {
 /** Оборачивает контент и рендерит лайтбокс. Дочерний контент получает openAt(i) для открытия по индексу. */
 export function ImageLightbox({ slides, children }: ImageLightboxProps) {
   const [open, setOpen] = useState(false);
+  const [everOpened, setEverOpened] = useState(false);
   const [index, setIndex] = useState(0);
 
   const openAt = (i: number) => {
     setIndex(i);
     setOpen(true);
+    setEverOpened(true);
   };
 
   return (
     <>
       {children(openAt)}
-      <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        index={index}
-        slides={slides}
-        on={{ view: ({ index: i }) => setIndex(i) }}
-        plugins={[Thumbnails]}
-        thumbnails={{ position: "bottom", width: 96, height: 64, gap: 8, borderRadius: 4 }}
-      />
+      {everOpened && (
+        <LightboxView
+          open={open}
+          close={() => setOpen(false)}
+          index={index}
+          // В лайтбоксе — сжатые WebP вместо оригиналов по несколько МБ.
+          slides={slides.map((s) => ({ ...s, src: optimizedSrc(s.src, 1920) }))}
+          onView={setIndex}
+        />
+      )}
     </>
   );
 }
@@ -97,13 +101,17 @@ export function ImageLightboxGrid({
             >
               {proportional ? (
                 <img
-                  src={src}
+                  src={optimizedSrc(src, 828)}
                   alt={labels[i] ?? `Фото ${i + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  style={blurStyle(src)}
                   className="block w-full transition-transform duration-300 group-hover:scale-105"
                 />
               ) : (
                 <Image
                   src={src}
+                  {...blurProps(src)}
                   alt={labels[i] ?? `Фото ${i + 1}`}
                   width={imageWidth}
                   height={imageHeight}

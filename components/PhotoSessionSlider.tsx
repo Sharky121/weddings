@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { blurProps } from "@/lib/images";
 import { useRef, useCallback } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -51,6 +52,7 @@ export function PhotoSessionSlider({ images, labels = [] }: PhotoSessionSliderPr
             <div className="relative h-full w-full bg-brand-light">
               <Image
                 src={src}
+                {...blurProps(src)}
                 alt={labels[i] ?? `Фотосессия — фото ${i + 1}`}
                 fill
                 className="object-cover"

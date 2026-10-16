@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { blurProps } from "@/lib/images";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 type VideoHoverCardProps = {
@@ -62,6 +63,7 @@ export function VideoHoverCard({
         <div className="relative aspect-[3/4] w-full overflow-hidden bg-brand-dark sm:aspect-video">
           <Image
             src={poster}
+            {...blurProps(poster)}
             alt=""
             fill
             className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"

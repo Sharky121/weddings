@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { blurProps } from "@/lib/images";
 import { ImageLightbox } from "@/components/ImageLightbox";
 
 type PortfolioBlockProps = {
@@ -26,6 +27,7 @@ export function PortfolioBlock({ title, images }: PortfolioBlockProps) {
           <div className="relative aspect-[3/4] w-full overflow-hidden bg-brand-muted">
             <Image
               src={images[0] ?? ""}
+              {...blurProps(images[0] ?? "")}
               alt={title}
               fill
               className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"

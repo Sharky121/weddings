@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { blurProps } from "@/lib/images";
 import { ImageLightbox } from "./ImageLightbox";
 
 const MAP_SLIDE = { src: "/map.png", alt: "План усадьбы Ушмор" };
@@ -16,6 +17,7 @@ export function MapImageLightbox() {
         >
           <Image
             src="/map.png"
+          {...blurProps("/map.png")}
             alt="План усадьбы Ушмор"
             width={1200}
             height={800}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { blurProps } from "@/lib/images";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 export const metadata = {
@@ -134,6 +135,7 @@ export default function PricePage() {
                 <div className="relative h-40 flex-shrink-0 bg-brand-muted sm:h-48">
                   <Image
                     src={row.image}
+                    {...blurProps(row.image)}
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 33vw, 100vw"

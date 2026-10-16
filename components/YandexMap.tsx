@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Skeleton } from "./Skeleton";
+import { useNearViewport } from "@/lib/useNearViewport";
 
 const YANDEX_MAPS_SCRIPT = "https://api-maps.yandex.ru/2.1/?lang=ru_RU";
 
@@ -52,6 +54,9 @@ declare global {
   }
 }
 
+// Константа, а не литерал в параметрах: иначе новый массив на каждом рендере пересоздавал бы карту.
+const DEFAULT_CENTER: [number, number] = [55.180429, 40.092341];
+
 type YandexMapProps = {
   /** Широта, долгота */
   center?: [number, number];
@@ -62,7 +67,7 @@ type YandexMapProps = {
 };
 
 export function YandexMap({
-  center = [55.180429, 40.092341],
+  center = DEFAULT_CENTER,
   zoom = 15,
   balloonTitle = "Усадьба Ушмор",
   balloonBody = "Рязанская область, Клепиковский район, д. Ушмор",
@@ -71,10 +76,13 @@ export function YandexMap({
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<YandexMapInstance | null>(null);
   const initedRef = useRef(false);
+  // Скрипт Яндекс.Карт (~700 КБ) грузится только когда до карты долистали.
+  const { ref: wrapperRef, near } = useNearViewport<HTMLDivElement>("300px");
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container || initedRef.current) return;
+    if (!near || !container || initedRef.current) return;
 
     loadYandexMapsScript()
       .then(() => {
@@ -101,6 +109,7 @@ export function YandexMap({
           );
 
           map.geoObjects.add(placemark);
+          setReady(true);
         });
       })
       .catch(console.error);
@@ -119,7 +128,12 @@ export function YandexMap({
         container.innerHTML = "";
       }
     };
-  }, [center, zoom, balloonTitle, balloonBody]);
+  }, [near, center, zoom, balloonTitle, balloonBody]);
 
-  return <div ref={containerRef} className={className} />;
+  return (
+    <div ref={wrapperRef} className={`relative ${className}`}>
+      <div ref={containerRef} className="absolute inset-0" />
+      {!ready && <Skeleton className="absolute inset-0" label="Загрузка карты…" />}
+    </div>
+  );
 }

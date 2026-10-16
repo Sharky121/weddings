@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { blurProps } from "@/lib/images";
 import { useEffect, useRef } from "react";
 
 const PARALLAX_FACTOR = 0.25;
@@ -54,6 +55,7 @@ export function ParallaxBackground({
       >
         <Image
           src={backgroundImage}
+          {...blurProps(backgroundImage)}
           alt=""
           fill
           priority
