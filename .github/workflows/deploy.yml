@@ -41,15 +41,13 @@ jobs:
             # Обновляем код
             git fetch --all
             git pull origin main
+            git lfs pull
 
-            # Устанавливаем production-зависимости
-            npm ci --omit=dev || npm install --omit=dev
+            # Устанавливаем зависимости (dev-зависимости — tailwind, typescript — нужны для сборки)
+            npm ci --no-audit --no-fund
 
-            # Временно устанавливаем typescript (нужен для next.config.ts)
-            npm install --no-save typescript
-
-            # Сборка проекта
-            npm run build
+            # Сборка проекта (лимит памяти под VPS с 2 ГБ RAM)
+            NODE_OPTIONS=--max-old-space-size=1536 npm run build
 
             # Работа с PM2
             if command -v pm2 &> /dev/null; then

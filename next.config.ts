@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    formats: ["image/avif", "image/webp"],
+    // Только WebP: AVIF на слабом VPS кодируется в 10–20 раз дольше.
+    formats: ["image/webp"],
     // Сжатые версии картинок кешируются на сервере на 30 дней.
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
