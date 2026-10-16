@@ -25,8 +25,9 @@ export function LazyVideo({ src, poster, className = "" }: LazyVideoProps) {
       <video
         className={className}
         src={near ? src : undefined}
-        // Постер — сжатый WebP вместо исходного JPG (~1 МБ).
-        poster={poster ? optimizedSrc(poster, 1920) : undefined}
+        // Постер — сжатый WebP, и только когда до видео долистали:
+        // иначе он грузится вместе с фоном первого экрана и тормозит его.
+        poster={near && poster ? optimizedSrc(poster, 1920) : undefined}
         autoPlay
         muted
         loop

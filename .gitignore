@@ -85,3 +85,4 @@ next-env.d.ts
 
 # генерируется scripts/gen-blur.mjs перед сборкой
 /lib/blur-data.json
+/lib/blur-bg.json

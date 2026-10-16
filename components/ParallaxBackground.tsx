@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { blurProps } from "@/lib/images";
+import bgPreviews from "@/lib/blur-bg.json";
 import { useEffect, useRef } from "react";
 
 const PARALLAX_FACTOR = 0.25;
+const BG_PREVIEWS = bgPreviews as Record<string, string>;
 
 type ParallaxBackgroundProps = {
   backgroundImage: string;
@@ -24,6 +25,7 @@ export function ParallaxBackground({
   className = "",
 }: ParallaxBackgroundProps) {
   const layerRef = useRef<HTMLDivElement>(null);
+  const preview = BG_PREVIEWS[backgroundImage];
 
   useEffect(() => {
     let frame = 0;
@@ -53,14 +55,22 @@ export function ParallaxBackground({
         ref={layerRef}
         className="absolute left-0 right-0 h-[130%] -top-[15%] will-change-transform"
       >
+        {/* Размытое превью этого же фото (~400 байт, вшито в страницу) — видно сразу, пока грузится фото */}
+        {preview && (
+          <div
+            className="absolute inset-0 scale-110 bg-cover blur-xl"
+            style={{ backgroundImage: `url(${preview})`, backgroundPosition }}
+            aria-hidden
+          />
+        )}
         <Image
           src={backgroundImage}
-          {...blurProps(backgroundImage)}
           alt=""
           fill
           priority
           sizes="100vw"
-          quality={75}
+          // Поверх фона лежит затемнение 40% — качество 60 на глаз не отличить, а весит на треть меньше.
+          quality={60}
           className="object-cover"
           style={{ objectPosition: backgroundPosition }}
         />
