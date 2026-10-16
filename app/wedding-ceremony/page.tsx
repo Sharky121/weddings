@@ -1,4 +1,5 @@
 import { ParallaxBackground } from "@/components/ParallaxBackground";
+import { LazyVideo } from "@/components/LazyVideo";
 
 export const metadata = {
   title: "Венчание",
@@ -108,19 +109,11 @@ export default function WeddingCeremonyPage() {
           </p>
         </div>
         <div className="aspect-video w-full overflow-hidden">
-          <video
+          <LazyVideo
             className="h-full w-full object-cover"
             src="/wedding-ceremony.mp4"
             poster="/wedding-ceremony_bg.jpg"
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls
-            preload="auto"
-          >
-            Ваш браузер не поддерживает воспроизведение видео.
-          </video>
+          />
         </div>
       </section>
     </>

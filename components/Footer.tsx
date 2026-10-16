@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CONTACT_MAX_URL } from "@/lib/site";
 
@@ -28,10 +29,11 @@ export default function Footer() {
               href="/"
               className="inline-block text-brand-dark transition hover:text-brand-dark/80"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/logo_brown.png?v=2"
+              <Image
+                src="/logo_brown.png"
                 alt="Усадьба Ушмор"
+                width={192}
+                height={192}
                 className="h-24 w-auto sm:h-28 lg:h-20 xl:h-24 [mix-blend-mode:multiply]"
               />
             </Link>

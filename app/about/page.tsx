@@ -1,5 +1,6 @@
 import { ImageLightboxGrid } from "@/components/ImageLightbox";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
+import { LazyVideo } from "@/components/LazyVideo";
 import { MapImageLightbox } from "@/components/MapImageLightbox";
 
 export const metadata = {
@@ -124,19 +125,11 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="aspect-video w-full overflow-hidden">
-          <video
+          <LazyVideo
             className="h-full w-full object-cover"
             src="/wedding-about.mp4"
             poster="/welcome_bg.jpg"
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls
-            preload="auto"
-          >
-            Ваш браузер не поддерживает воспроизведение видео.
-          </video>
+          />
         </div>
       </section>
 

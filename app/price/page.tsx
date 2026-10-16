@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 export const metadata = {
@@ -130,10 +131,14 @@ export default function PricePage() {
                 key={index}
                 className="flex flex-col overflow-hidden rounded-2xl border border-brand-muted/50 bg-white shadow-sm transition-shadow hover:shadow-md"
               >
-                <div
-                  className="relative h-40 flex-shrink-0 bg-brand-muted bg-cover bg-center bg-no-repeat sm:h-48"
-                  style={{ backgroundImage: `url(${row.image})` }}
-                >
+                <div className="relative h-40 flex-shrink-0 bg-brand-muted sm:h-48">
+                  <Image
+                    src={row.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 33vw, 100vw"
+                    className="object-cover"
+                  />
                   <div className="absolute inset-0 bg-black/30" aria-hidden />
                 </div>
                 <div className="flex flex-1 flex-col px-5 py-4 text-center sm:px-6 sm:py-5">

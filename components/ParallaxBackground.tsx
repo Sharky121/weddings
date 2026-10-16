@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 const PARALLAX_FACTOR = 0.25;
 
@@ -13,21 +14,33 @@ type ParallaxBackgroundProps = {
 /**
  * Слой фона с эффектом параллакса при скролле (фон движется медленнее контента).
  * Размещать первым внутри секции с overflow-hidden.
+ * Картинка идёт через next/image (сжатие + нужный размер под экран),
+ * сдвиг меняется напрямую в DOM через requestAnimationFrame — без ре-рендеров React.
  */
 export function ParallaxBackground({
   backgroundImage,
   backgroundPosition = "center center",
   className = "",
 }: ParallaxBackgroundProps) {
-  const [offset, setOffset] = useState(0);
+  const layerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => {
-      setOffset(window.scrollY * PARALLAX_FACTOR);
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      if (layerRef.current) {
+        layerRef.current.style.transform = `translate3d(0, ${window.scrollY * PARALLAX_FACTOR}px, 0)`;
+      }
     };
-    onScroll();
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(frame);
+    };
   }, []);
 
   return (
@@ -36,13 +49,20 @@ export function ParallaxBackground({
       aria-hidden
     >
       <div
-        className="absolute left-0 right-0 h-[130%] -top-[15%] bg-no-repeat bg-cover will-change-transform"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundPosition,
-          transform: `translate3d(0, ${offset}px, 0)`,
-        }}
-      />
+        ref={layerRef}
+        className="absolute left-0 right-0 h-[130%] -top-[15%] will-change-transform"
+      >
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          quality={75}
+          className="object-cover"
+          style={{ objectPosition: backgroundPosition }}
+        />
+      </div>
     </div>
   );
 }
