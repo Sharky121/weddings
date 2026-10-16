@@ -1,4 +1,5 @@
 import { BuildRouteButton } from "@/components/BuildRouteButton";
+import { CONTACT_MAX_URL } from "@/lib/site";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { YandexMap } from "@/components/YandexMap";
 
@@ -247,7 +248,7 @@ export default function ContactsPage() {
                     Мессенджер MAX
                   </p>
                   <a
-                    href="https://max.mail.ru"
+                    href={CONTACT_MAX_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-1 inline-block text-brand-dark underline decoration-brand-muted underline-offset-2 hover:text-brand-dark"

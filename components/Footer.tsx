@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CONTACT_MAX_URL } from "@/lib/site";
 
 const navItems = [
   { label: "Об Усадьбе", href: "/about" },
@@ -108,7 +109,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://max.mail.ru"
+                  href={CONTACT_MAX_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-brand-dark hover:underline"

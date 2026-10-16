@@ -6,3 +6,6 @@ export const SITE_URL =
 
 export const SITE_DEFAULT_DESCRIPTION =
   "Усадьба Ушмор — уникальное место для проведения свадьбы. Старинный парк, гостевые дома, изысканная природа Мещеры. Рязанская область.";
+
+export const CONTACT_MAX_URL =
+  "https://max.ru/u/f9LHodD0cOIfZWvnRqG9G78hexf_pM3ybUj1zXycgJCOrWvzSAKvkV5pVhQ";
