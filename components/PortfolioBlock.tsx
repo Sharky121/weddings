@@ -31,7 +31,7 @@ export function PortfolioBlock({ title, images }: PortfolioBlockProps) {
               alt={title}
               fill
               className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             />
             {/* Градиентный оверлей снизу для читаемости заголовка */}
             <div
@@ -39,17 +39,17 @@ export function PortfolioBlock({ title, images }: PortfolioBlockProps) {
               aria-hidden
             />
             {/* Заголовок поверх фото */}
-            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 lg:p-4">
               <h3
-                className="text-xl font-normal tracking-wide text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)] sm:text-2xl"
+                className="text-xl font-normal tracking-wide text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)] sm:text-2xl lg:text-xl"
                 style={{ fontFamily: "var(--font-forum)" }}
               >
                 {title}
               </h3>
-              <span className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-all duration-300 group-hover:gap-3 sm:text-base">
+              <span className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-all duration-300 group-hover:gap-3 sm:text-base lg:text-sm">
                 Смотреть галерею
                 <svg
-                  className="h-4 w-4 sm:h-5 sm:w-5"
+                  className="h-4 w-4 sm:h-5 sm:w-5 lg:h-4 lg:w-4"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"

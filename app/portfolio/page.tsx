@@ -111,13 +111,10 @@ export default function PortfolioPage() {
               Наши свадьбы
             </p>
           </blockquote>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
+          {/* 1 / 2 / 4 карточки в ряд */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
             {portfolioItems.map((item) => (
-              <PortfolioBlock
-                key={item.title}
-                title={item.title}
-                images={item.images}
-              />
+              <PortfolioBlock key={item.title} title={item.title} images={item.images} />
             ))}
           </div>
         </div>
