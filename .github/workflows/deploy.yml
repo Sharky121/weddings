@@ -49,6 +49,10 @@ jobs:
             # Сборка проекта (лимит памяти под VPS с 2 ГБ RAM)
             NODE_OPTIONS=--max-old-space-size=1536 npm run build
 
+            # Сбрасываем кеш сжатых картинок: он хранится по адресу, а не по содержимому,
+            # и после замены/переименования фото сайт отдавал бы старую версию до 30 дней
+            rm -rf .next/cache/images
+
             # Работа с PM2
             if command -v pm2 &> /dev/null; then
                 pm2 startOrReload ecosystem.config.js --update-env
