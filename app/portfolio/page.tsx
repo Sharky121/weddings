@@ -21,10 +21,11 @@ const portfolioItems = [
   { title: "Денис и Алиса", images: portfolioImages(3, 15) },
   { title: "Владислав и Виктория", images: portfolioImages(4, 8) },
   { title: "Василий и Яна", images: portfolioImages(5, 5) },
-  { title: "Даниил и Тамара", images: portfolioImages(6, 18) },
+  { title: "Даниил и Тамара", images: portfolioImages(6, 8) },
   { title: "Сергей и Юлия", images: portfolioImages(7, 10) },
   { title: "Евгений и Анастасия", images: portfolioImages(8, 13) },
   { title: "Роман и Ульяна", images: portfolioImages(9, 11) },
+  { title: "Сергей и София", images: portfolioImages(10, 10) },
 ];
 
 export default function PortfolioPage() {
