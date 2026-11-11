@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Forum, Kurale, Raleway } from "next/font/google";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SITE_DEFAULT_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
@@ -22,6 +23,8 @@ const forum = Forum({
   subsets: ["latin", "latin-ext", "cyrillic"],
   weight: ["400"],
 });
+
+const YANDEX_METRIKA_ID = 114164200;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -94,6 +97,28 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <Script id="yandex-metrika" strategy="afterInteractive">
+          {`
+            (function(m,e,t,r,i,k,a){
+              m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+              m[i].l=1*new Date();
+              for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+              k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+            })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=${YANDEX_METRIKA_ID}','ym');
+
+            ym(${YANDEX_METRIKA_ID}, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+          `}
+        </Script>
+        <noscript>
+          <div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`https://mc.yandex.ru/watch/${YANDEX_METRIKA_ID}`}
+              style={{ position: "absolute", left: "-9999px" }}
+              alt=""
+            />
+          </div>
+        </noscript>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
